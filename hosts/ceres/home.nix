@@ -5,6 +5,5 @@
 
     # Use Plasma Desktop.
     ../../home/features/desktop/plasma
-
-  ]
+  ];
 }
