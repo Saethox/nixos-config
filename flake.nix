@@ -54,7 +54,7 @@
               useUserPackages = true;
               # User
               extraSpecialArgs = {inherit inputs outputs;};
-              users.wurthjon = import ./hosts/ceres/home.nix
+              users.wurthjon = import ./hosts/ceres/home.nix;
             };
           }
         ];
