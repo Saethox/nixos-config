@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Enable fingerprint.
-  services.fprind = {
+  services.fprintd = {
     enable = true;
     tod = {
       enable = true;
