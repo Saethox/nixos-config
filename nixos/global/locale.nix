@@ -16,7 +16,7 @@
   };
 
   # Set timezone.
-  time.timezone = "Europe/Berlin";
+  time.timeZone = "Europe/Berlin";
 
   # Configure console keymap
   console.keyMap = "de";
