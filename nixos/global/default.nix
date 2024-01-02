@@ -1,5 +1,5 @@
 # Global config for all hosts.
-{lib, inputs, outputs, ...}: {
+{lib, inputs, outputs, config, ...}: {
   imports = [
       ./common.nix
       ./locale.nix
