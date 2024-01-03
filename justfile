@@ -1,11 +1,11 @@
 # Useful nixos commands
 
 # Use fish for shell commands
-set shell := ["fish"]
+# set shell := ["fish", "-c"]
 
 # Print available commands by default
 default:
-    @just --list
+    @just --list --unsorted --justfile {{justfile()}}
 
 # Deploy the system config
 deploy:
@@ -33,7 +33,7 @@ gc:
 
 # Enter the Nix REPL
 repl:
-  nix repl -f flake:nixpkgs
+  nix repl -f ./flake.nix
 
 # Run the Nix formatter
 fmt:
