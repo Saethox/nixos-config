@@ -4,5 +4,5 @@
   ];
 
   # Enable firefox.
-  firefox.enable = true;
+  programs.firefox.enable = true;
 }
