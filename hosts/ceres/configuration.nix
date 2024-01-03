@@ -1,14 +1,13 @@
-# Configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
+# system configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
 {
   inputs,
   ...
 }: {
   imports = [
-    # Global NixOS configuration.
-    ../../nixos/global
+    ../../nixos
 
-    # NixOS configuration features.
-    # ...
+    # Use Plasma.
+    ../../nixos/desktop/plasma
 
     # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
     inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen

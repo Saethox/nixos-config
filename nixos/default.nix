@@ -1,9 +1,8 @@
 # Global config for all hosts.
 {lib, inputs, outputs, config, ...}: {
   imports = [
-      ./common.nix
       ./locale.nix
-      ./fish.nix
+      ./cli
   ];
 
   # Configure global nixpkgs instance.
