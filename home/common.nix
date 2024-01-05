@@ -6,6 +6,7 @@
       inkscape
       zoom-us
       unstable.jetbrains-toolbox
+      unstable.vscode-fhs
   ];
 
   # Enable firefox.

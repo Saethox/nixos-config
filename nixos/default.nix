@@ -2,6 +2,7 @@
 {lib, inputs, outputs, config, ...}: {
   imports = [
       ./locale.nix
+      ./fonts.nix
       ./cli
   ];
 
@@ -46,6 +47,8 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store by default.
     auto-optimise-store = lib.mkDefault true;
+    # Disable warning for dirty repository.
+    warn-dirty = false;
   };
 
   # Enable weekly nix store garbage collect.
