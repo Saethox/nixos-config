@@ -6,7 +6,7 @@ My personal [NixOS](https://nixos.org/) configuration.
 
 Deploy the configuration with:
 ```sh
-$ sudo just deploy 
+$ just deploy 
 ```
 
 ## Hosts
