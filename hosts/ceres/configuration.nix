@@ -1,5 +1,9 @@
 # system configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
-{inputs, lib, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   imports = [
     ../../nixos
     ../../nixos/desktop/plasma # Plasma Desktop

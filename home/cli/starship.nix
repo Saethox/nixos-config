@@ -2,8 +2,8 @@
   programs.starship = {
     enable = true;
     package = pkgs.unstable.starship;
-    settings = {
-      enable_transience = true;
-    };
+    enableFishIntegration = true;
+    # Remove previous prompt for clarity.
+    enableTransience = true;
   };
 }
