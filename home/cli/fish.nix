@@ -1,14 +1,12 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    fishPlugins.done
-    fishPlugins.forgit
-    fishPlugins.hydro
-
-    fzf
-    fishPlugins.fzf-fish
-
-    grc
-    fishPlugins.grc
+  home.packages = with pkgs.fishPlugins; [
+    done # Notifications
+    forgit # Git additions
+    # hydro # Prompt
+    fzf-fish # Key bindings for fzf
+    grc # Colorize zsing grc
+    autopair # Matching pairs
+    puffer # Text expansion
   ];
 
   programs.fish = {
