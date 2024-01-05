@@ -10,4 +10,12 @@
     grc
     fishPlugins.grc
   ];
+
+  programs.fish = {
+    enable = true;
+    functions = {
+      # Disable greeting.
+      fish_greeting = "";
+    };
+  };
 }

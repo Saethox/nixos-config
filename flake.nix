@@ -14,6 +14,10 @@
 
     # NixOS hardware
     hardware.url = "github:nixos/nixos-hardware";
+
+    # nh (yet-another-nix-helper)
+    nh.url = "github:viperML/nh";
+    nh.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -23,15 +27,18 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    # Supported systems.
+    systems = [
+      "x86_64-linux"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Custom packages
     # Accessible through `nix build`, `nix shell`, etc.
-    # TODO
-    # packages = import ./pkgs nixpkgs.legacyPackages.${system};
+    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
 
     # Formatter for nix files, available through `nix fmt`.
-    # TODO
-    # formatter = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Custom packages and modifications, exported as overlays.
     overlays = import ./overlays {inherit inputs;};

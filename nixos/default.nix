@@ -14,12 +14,7 @@
 
   # Configure global nixpkgs instance.
   nixpkgs = {
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-
+    overlays = builtins.attrValues outputs.overlays ++ [
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -54,7 +49,9 @@
     # Deduplicate and optimize nix store by default.
     auto-optimise-store = lib.mkDefault true;
     # Disable warning for dirty repository.
-    warn-dirty = false;
+    warn-dirty = lib.mkDefault false;
+    # Number of jobs used for building.
+    max-jobs = lib.mkDefault 4;
   };
 
   # Enable weekly nix store garbage collect.

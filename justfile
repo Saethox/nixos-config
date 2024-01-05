@@ -9,7 +9,7 @@ default:
 
 # Deploy the system config
 deploy:
-    nixos-rebuild switch --flake .
+    nh os switch . --ask --nom
 
 # Deploy the system config with debug flags
 debug:
