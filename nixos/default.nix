@@ -1,9 +1,15 @@
 # Global config for all hosts.
-{lib, inputs, outputs, config, ...}: {
+{
+  lib,
+  inputs,
+  outputs,
+  config,
+  ...
+}: {
   imports = [
-      ./locale.nix
-      ./fonts.nix
-      ./cli
+    ./locale.nix
+    ./fonts.nix
+    ./cli
   ];
 
   # Configure global nixpkgs instance.

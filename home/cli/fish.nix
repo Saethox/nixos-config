@@ -4,7 +4,7 @@
     fishPlugins.forgit
     fishPlugins.hydro
 
-    fzf 
+    fzf
     fishPlugins.fzf-fish
 
     grc

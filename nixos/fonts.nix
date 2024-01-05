@@ -5,14 +5,14 @@
     font-awesome
 
     # Nerdfonts
-    (nerdfonts.override { 
-      fonts = [ 
-        "JetBrainsMono" 
-      ]; 
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+      ];
     })
   ];
 
   fonts.fontconfig.defaultFonts = {
-    monospace = [ "JetBrainsMono Nerd Font" ]
+    monospace = ["JetBrainsMono Nerd Font"];
   };
 }

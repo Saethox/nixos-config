@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-	# Fetch files from the internet
+    # Fetch files from the internet
     wget
     curl
 

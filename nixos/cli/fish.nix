@@ -8,7 +8,7 @@
       functions.enable = true;
     };
   };
-  
+
   # Use fish shell by default.
   users.defaultUserShell = pkgs.fish;
 }

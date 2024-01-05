@@ -16,6 +16,7 @@
   services.xserver.desktopManager.plasma5.enable = true;
 
   environment.systemPackages = with pkgs; [
-  	libsForQt5.bismuth # Bismuth window tiling manager extension
-  ];  
+    libsForQt5.bismuth # Bismuth window tiling manager extension
+    arandr # GUI for xrandr
+  ];
 }

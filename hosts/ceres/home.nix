@@ -1,5 +1,5 @@
 # home-manager configuration file of 'ceres' (replaces ~/.config/nixpkgs/home.nix).
-{inputs, ...}: {
+{
   imports = [
     ../../home
 

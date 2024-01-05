@@ -1,8 +1,5 @@
 # system configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     ../../nixos
 
@@ -35,16 +32,20 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Power management.
+  services.auto-cpufreq.enable = true;
+  services.thermald.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.wurthjon = {
-      isNormalUser = true;
-      description = "Jonathan Wurth";
-      openssh.authorizedKeys.keys = [];
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-        # "docker"
-      ];
+    isNormalUser = true;
+    description = "Jonathan Wurth";
+    openssh.authorizedKeys.keys = [];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      # "docker"
+    ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

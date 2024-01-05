@@ -5,7 +5,7 @@
   ];
 
   home.packages = with pkgs; [
-  	gitui # Git Terminal UI
+    gitui # Git Terminal UI
     nil # Nix language server
     alejandra # Nix formatter
   ];

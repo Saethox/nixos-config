@@ -46,7 +46,8 @@
           # Global
           ./hosts/ceres/configuration.nix
           # Home
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager = {
               # Use the global nixpkgs instance.
               useGlobalPkgs = true;
