@@ -18,6 +18,9 @@
     # nh (yet-another-nix-helper)
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
+
+    # rust-overlay (Rust toolchains)
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs = {

@@ -1,14 +1,13 @@
 # Global home-manager configuration file.
 {
-  inputs,
-  outputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   imports = [
-    ./common.nix
+    ./common.nix # Common programs and packages
+    ./cli # CLI tools
+    ./dev # Dev tools
   ];
 
   home = {

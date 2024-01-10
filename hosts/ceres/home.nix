@@ -2,9 +2,6 @@
 {
   imports = [
     ../../home
-
-    # Use CLI tools.
-    ../../home/cli
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

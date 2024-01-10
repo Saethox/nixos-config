@@ -5,18 +5,16 @@
   ...
 }: {
   imports = [
-    ../../nixos
+    ../../nixos # Common system stuff
+    ../../nixos/desktop/xserver.nix # X11 Windowing System
     ../../nixos/desktop/plasma # Plasma Desktop
-    ../../nixos/virtualization.nix # Virtualization (docker, etc.)
+    ../../nixos/desktop/autorandr # Monitor Settings
+    ../../nixos/virtualization.nix # Virtualization (`docker`, etc.)
 
-    # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
-    inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen
-
-    # Import the generated (nixos-generate-config) hardware configuration.
-    ./hardware-configuration.nix
-
-    # Enable fingerprint reader.
-    ./fprint.nix
+    inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
+    ./hardware-configuration.nix # Auto-generated (nixos-generate-config) hardware configuration.
+    ./fprint.nix # Fingerprint sensor (`fprintd`)
+    ./sound.nix # Sound (`pulseaudio` and `pipewire`)
   ];
 
   # Bootloader

@@ -6,12 +6,16 @@
     pympress # Presentation software
     inkscape # Inkscape
     zoom-us # Zoom client
+    zotero # Literature management
+    texliveTeTeX # LaTeX / XeTeX with many packages
     unstable.jetbrains-toolbox # Jetbrains Toolbox
     unstable.vscode-fhs # VS Code
+    unstable.obsidian # Markdown knowledge base
+    firefox
+    (vivaldi.override {
+      proprietaryCodecs = true;
+      enableWidevine = false;
+    })
+    (opera.override {proprietaryCodecs = true;})
   ];
-
-  # Enable firefox.
-  # TODO: Manage extensions declaratively?
-  # For now, use Firefox Sync.
-  programs.firefox.enable = true;
 }
