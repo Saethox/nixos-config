@@ -21,20 +21,20 @@ update:
 
 # Show the history of the system
 history:
-	nix profile history --profile /nix/var/nix/profiles/system
+    nix profile history --profile /nix/var/nix/profiles/system
 
 # Remove all generations older than 7 days
 clean:
-	sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
+    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
 
 # Garbage collect all unused nix store entries
 gc:
-	sudo nix store gc --debug
+    sudo nix store gc --debug
 
 # Enter the Nix REPL
 repl:
-  nix repl -f ./flake.nix
+    nix repl
 
 # Run the Nix formatter
 fmt:
-	nix fmt
+    nix fmt
