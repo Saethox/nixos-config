@@ -5,13 +5,19 @@
   ...
 }: {
   imports = [
-    ../../nixos # Common system stuff
-    ../../nixos/desktop/xserver.nix # X11 Windowing System
-    ../../nixos/desktop/plasma # Plasma Desktop
-    ../../nixos/desktop/autorandr # Monitor Settings
+    # Global system configuration.
+    ../../nixos
+
+    ../../nixos/desktop/x11 # X11 Windowing System
+    ../../nixos/desktop/x11/plasma # Plasma Desktop
+    ../../nixos/desktop/x11/touchpad.nix # Touchpad + Gestures
+
     ../../nixos/virtualization.nix # Virtualization (`docker`, etc.)
 
+    # Input modules.
     inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
+    
+    # Device-specific configuration.
     ./hardware-configuration.nix # Auto-generated (nixos-generate-config) hardware configuration.
     ./fprint.nix # Fingerprint sensor (`fprintd`)
     ./sound.nix # Sound (`pulseaudio` and `pipewire`)
@@ -47,6 +53,7 @@
       "networkmanager"
       "libvirtd"
       "docker"
+      "input"
     ];
   };
 

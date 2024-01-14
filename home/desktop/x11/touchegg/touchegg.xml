@@ -1,0 +1,38 @@
+<touchégg>
+    <settings>
+        <!-- Global settings. -->
+    </settings>
+    <!-- Configuration for every application. -->
+    <application name="All">
+        <!-- Change Desktop with four finger swipe (inverse / natural direction). -->
+        <gesture type="SWIPE" fingers="4" direction="UP">
+            <action type="CHANGE_DESKTOP">
+                <direction>down</direction>
+                <animate>true</animate>
+                <animationPosition>up</animationPosition>
+            </action>
+        </gesture>
+        <gesture type="SWIPE" fingers="4" direction="DOWN">
+            <action type="CHANGE_DESKTOP">
+                <direction>up</direction>
+                <animate>true</animate>
+                <animationPosition>down</animationPosition>
+            </action>
+        </gesture>
+        <gesture type="SWIPE" fingers="4" direction="RIGHT">
+            <action type="CHANGE_DESKTOP">
+                <direction>left</direction>
+                <animate>true</animate>
+                <animationPosition>right</animationPosition>
+            </action>
+        </gesture>
+        <gesture type="SWIPE" fingers="4" direction="LEFT">
+            <action type="CHANGE_DESKTOP">
+                <direction>right</direction>
+                <animate>true</animate>
+                <animationPosition>left</animationPosition>
+            </action>
+        </gesture>
+    </application>
+    <!-- Configuration for specific applications. -->
+</touchégg>

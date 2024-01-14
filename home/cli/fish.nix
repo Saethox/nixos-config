@@ -4,7 +4,7 @@
     forgit # Git additions
     # hydro # Prompt
     fzf-fish # Key bindings for fzf
-    grc # Colorize zsing grc
+    grc # Colorize using grc
     autopair # Matching pairs
     puffer # Text expansion
   ];

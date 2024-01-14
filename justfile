@@ -31,9 +31,9 @@ clean:
 gc:
     sudo nix store gc --debug
 
-# Enter the Nix REPL
+# Enter the Nix REPL and load `flake.nix`
 repl:
-    nix repl
+    nix repl .
 
 # Run the Nix formatter
 fmt:

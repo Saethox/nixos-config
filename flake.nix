@@ -36,15 +36,19 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    # Custom packages
-    # Accessible through `nix build`, `nix shell`, etc.
+    # Custom packages accessible through `nix build`, `nix shell`, etc.
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-
     # Formatter for nix files, available through `nix fmt`.
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Custom packages and modifications, exported as overlays.
     overlays = import ./overlays {inherit inputs;};
+    # Custom constants.
+    constants = import ./constants;
+    # Custom NixOS modules.
+    nixosModules = import ./modules/nixos;
+    # Custom home-manager modules.
+    homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint.
     # Available through `nixos-rebuild --flake .#<hostname>` or `just deploy`.
