@@ -15,12 +15,16 @@ $ just deploy
 
 ## Structure
 
+- `constants` ++ Read-only data
 - `home` ++ User environment managed with [`home-manager`](https://github.com/nix-community/home-manager)
 - `hosts` ++ Host-specific configuration
   - `ceres`
     - `configuration.nix` ++ System configuration
     - `hardware-configuration.nix` ++ Auto-generated hardware configuration
     - `home.nix` ++ User configuration
+- `modules`
+  - `home-manager` ++ Custom `home-manager` modules
+  - `nixos` ++ Custom system modules 
 - `nixos` ++ System environment
 - `overlays` ++ Custom overlays
 - `pkgs` ++ Custom packages
