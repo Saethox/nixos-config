@@ -15,5 +15,8 @@
       # Disable greeting.
       fish_greeting = "";
     };
+    interactiveShellInit = ''
+      zoxide init fish | source
+    '';
   };
 }
