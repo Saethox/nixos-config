@@ -7,7 +7,7 @@
     ../../home/desktop/x11/touchegg # Touchpad gestures
 
     # Device-specific home configuration.
-    ./desktop/x11/autorandr # Monitor profiles
+    # Add modules here.
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

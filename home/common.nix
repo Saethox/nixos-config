@@ -11,6 +11,8 @@
     unstable.jetbrains-toolbox # Jetbrains Toolbox
     unstable.vscode-fhs # VS Code
     unstable.obsidian # Markdown knowledge base
+    unstable.nextcloud-client # Nextcloud Desktop
+    unstable.seafile-client # Seafile Desktop
     firefox
     (vivaldi.override {
       proprietaryCodecs = true;

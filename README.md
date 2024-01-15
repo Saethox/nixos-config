@@ -2,7 +2,7 @@
 
 My personal [NixOS](https://nixos.org/) configuration.
 
-> Mostly, I have no idea what I'm doing.
+> For the most part, I have no idea what I'm doing.
 
 Deploy the configuration with:
 ```sh

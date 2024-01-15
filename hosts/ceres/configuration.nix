@@ -21,6 +21,7 @@
     ./hardware-configuration.nix # Auto-generated (nixos-generate-config) hardware configuration.
     ./fprint.nix # Fingerprint sensor (`fprintd`)
     ./sound.nix # Sound (`pulseaudio` and `pipewire`)
+    ./desktop/x11/autorandr # Monitor profiles
   ];
 
   # Bootloader
