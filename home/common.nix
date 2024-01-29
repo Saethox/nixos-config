@@ -14,10 +14,6 @@
     unstable.nextcloud-client # Nextcloud Desktop
     unstable.seafile-client # Seafile Desktop
     firefox
-    (vivaldi.override {
-      proprietaryCodecs = true;
-      enableWidevine = false;
-    })
     (opera.override {proprietaryCodecs = true;})
   ];
 }
