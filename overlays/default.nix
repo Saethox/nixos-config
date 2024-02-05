@@ -10,6 +10,16 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+
+    # Fix scaling for `zoom-us`.
+    zoom-us = prev.zoom-us.overrideAttrs (oldAttrs: {
+      postFixup =
+        oldAttrs.postFixup
+        + ''
+          wrapProgram $out/bin/zoom-us --unset XDG_SESSION_TYPE --set QT_SCALE_FACTOR 2
+          wrapProgram $out/bin/zoom --unset XDG_SESSION_TYPE --set QT_SCALE_FACTOR 2
+        '';
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
