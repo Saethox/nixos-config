@@ -16,4 +16,8 @@
     firefox
     (opera.override {proprietaryCodecs = true;})
   ];
+
+  services.flatpak.packages = [
+    "org.freefilesync.FreeFileSync" # File Synchronization & Backup
+  ];
 }

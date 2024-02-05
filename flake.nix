@@ -18,6 +18,9 @@
     # nh (yet-another-nix-helper)
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
+
+    # nix-flatpaks (declarative flatpaks)
+    flatpaks.url = "github:gmodena/nix-flatpak/main";
   };
 
   outputs = {

@@ -12,15 +12,11 @@
     ../../nixos/desktop/x11/plasma # Plasma Desktop
     ../../nixos/desktop/x11/touchpad.nix # Touchpad + Gestures
 
-    ../../nixos/virtualization.nix # Virtualization (`docker`, etc.)
-
     # Input modules.
     inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
-    
+
     # Device-specific configuration.
-    ./hardware-configuration.nix # Auto-generated (nixos-generate-config) hardware configuration.
-    ./fprint.nix # Fingerprint sensor (`fprintd`)
-    ./sound.nix # Sound (`pulseaudio` and `pipewire`)
+    ./hardware # Auto-generated (nixos-generate-config) hardware configuration.
     ./desktop/x11/autorandr # Monitor profiles
   ];
 

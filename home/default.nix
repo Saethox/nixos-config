@@ -2,12 +2,16 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: {
   imports = [
     ./common.nix # Common programs and packages
     ./cli # CLI tools
     ./dev # Dev tools
+
+    # Input modules.
+    inputs.flatpaks.homeManagerModules.nix-flatpak # Declarative flatpaks
   ];
 
   home = {

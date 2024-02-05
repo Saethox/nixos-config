@@ -9,6 +9,8 @@
   imports = [
     ./locale.nix
     ./fonts.nix
+    ./virtualization.nix
+    ./flatpak.nix
     ./cli
   ];
 
