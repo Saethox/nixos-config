@@ -35,7 +35,4 @@
 
   # Add `nh` to `pkgs`.
   nh = inputs.nh.overlays.default;
-
-  # Add `rust-bin` to `pkgs`.
-  rust-overlay = inputs.rust-overlay.overlays.default;
 }
