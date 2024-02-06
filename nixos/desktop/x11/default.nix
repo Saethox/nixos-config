@@ -3,7 +3,7 @@
     enable = true;
     # Configure keymap in X11
     layout = "de";
-    xkbVariant = "";
+    xkbVariant = "nodeadkeys";
   };
 
   environment.systemPackages = with pkgs; [
