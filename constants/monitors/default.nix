@@ -15,11 +15,10 @@
     rate = 60.0;
     scale = 1.5;
   };
-  # TODO: Fix EDID.
   # Philips 345B1C 34" 21:9
   work.main = {
     fingerprint = builtins.readFile ./Philips-345B1C.edid;
-    width = 3840;
+    width = 3440;
     height = 1440;
     rate = 100.0;
     scale = 1.5;

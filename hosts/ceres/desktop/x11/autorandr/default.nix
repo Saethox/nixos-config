@@ -53,6 +53,28 @@ in {
           };
         };
       };
+      "work" = {
+        fingerprint = {
+          eDP-1 = internal.fingerprint;
+          DP-1-3 = work.main.fingerprint;
+        };
+        config = {
+          eDP-1 = with internal; {
+            enable = true;
+            primary = true;
+            mode = utils.toModeString width height;
+            rate = builtins.toString rate;
+          };
+          DP-1-3 = with work.main; {
+            enable = true;
+            mode = utils.toModeString width height;
+            rate = builtins.toString rate;
+            scale.x = scale;
+            scale.y = scale;
+            position = utils.posRightOf internal;
+          };
+        };
+      };
     };
   };
 }
