@@ -1,5 +1,10 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
+    # Fonts
+    libertine
+    inconsolata
+
+
     # Icon fonts
     material-design-icons
     font-awesome

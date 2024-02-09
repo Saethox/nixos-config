@@ -3,11 +3,12 @@
     kate # Text editor
     keepassxc # Password manager
     signal-desktop # Signal client
+    libsForQt5.kdeconnect-kde # Share files
     pympress # Presentation software
     inkscape # Inkscape
+    pandoc # Document conversion
     zoom-us # Zoom client
     zotero # Literature management
-    texliveTeTeX # LaTeX / XeTeX with many packages
     unstable.jetbrains-toolbox # Jetbrains Toolbox
     unstable.vscode-fhs # VS Code
     unstable.obsidian # Markdown knowledge base
