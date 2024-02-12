@@ -11,6 +11,7 @@
     ../../nixos/desktop/x11 # X11 Windowing System
     ../../nixos/desktop/x11/plasma # Plasma Desktop
     ../../nixos/desktop/x11/touchpad.nix # Touchpad + Gestures
+    ../../nixos/mounts/uni.nix # Uni drives
 
     # Input modules.
     inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen # nixos-hardware settings for Lenovo Thinkpad X1 Carbon Gen 11.
@@ -44,7 +45,7 @@
   users.users.wurthjon = {
     isNormalUser = true;
     description = "Jonathan Wurth";
-    openssh.authorizedKeys.keys = [];
+    uid = 1000;
     extraGroups = [
       "wheel"
       "networkmanager"
