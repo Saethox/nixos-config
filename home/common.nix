@@ -14,8 +14,10 @@
     unstable.obsidian # Markdown knowledge base
     unstable.nextcloud-client # Nextcloud Desktop
     unstable.seafile-client # Seafile Desktop
-    firefox
-    (opera.override {proprietaryCodecs = true;})
+    gimp # Image editing
+    gparted # Partition tool
+    firefox # Browser
+    (opera.override {proprietaryCodecs = true;}) # Backup Browser
   ];
 
   services.flatpak.packages = [
