@@ -11,6 +11,7 @@
     ./fonts.nix
     ./virtualization.nix
     ./flatpak.nix
+    ./mullvad.nix
     ./cli
   ];
 
