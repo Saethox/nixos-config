@@ -1,26 +1,33 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    kate # Text editor
-    keepassxc # Password manager
-    signal-desktop # Signal client
-    libsForQt5.kdeconnect-kde # Share files
-    pympress # Presentation software
-    inkscape # Inkscape
-    pandoc # Document conversion
-    zoom-us # Zoom client
-    zotero # Literature management
-    unstable.jetbrains-toolbox # Jetbrains Toolbox
-    unstable.vscode-fhs # VS Code
-    unstable.obsidian # Markdown knowledge base
-    unstable.nextcloud-client # Nextcloud Desktop
-    unstable.seafile-client # Seafile Desktop
-    gimp # Image editing
-    gparted # Partition tool
-    firefox # Browser
-    (opera.override {proprietaryCodecs = true;}) # Backup Browser
-  ];
+  home.packages =
+    (with pkgs; [
+      kate # Text editor
+      keepassxc # Password manager
+      signal-desktop # Signal client
+      pympress # Presentation software
+      inkscape # Inkscape
+      pandoc # Document conversion
+      zoom-us # Zoom client
+      zotero # Literature management
+      gimp # Image editing
+      gparted # Partition tool
+      firefox # Browser
+      (opera.override {proprietaryCodecs = true;}) # Alternative Browser
+    ])
+    ++ (with pkgs.unstable; [
+      jetbrains-toolbox # Jetbrains Toolbox
+      vscode-fhs # VS Code
+      obsidian # Markdown knowledge base
+      nextcloud-client # Nextcloud Desktop
+      seafile-client # Seafile Desktop
+      jabref # Literature management
+      zettlr # Alternative Obsidian
+      mullvad-vpn # VPN (requires `services.mullvad-vpn`)
+    ]);
 
   services.flatpak.packages = [
     "org.freefilesync.FreeFileSync" # File Synchronization & Backup
   ];
+
+  services.kdeconnect.enable = true;
 }
