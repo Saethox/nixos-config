@@ -3,7 +3,8 @@
     # Fonts
     libertine
     inconsolata
-
+    cm_unicode
+    fira
 
     # Icon fonts
     material-design-icons
@@ -13,6 +14,7 @@
     (nerdfonts.override {
       fonts = [
         "JetBrainsMono"
+        "FiraCode"
       ];
     })
   ];
