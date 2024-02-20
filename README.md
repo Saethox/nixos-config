@@ -20,7 +20,7 @@ $ just deploy
 - `hosts` ++ Host-specific configuration
   - `ceres`
     - `configuration.nix` ++ System configuration
-    - `hardware-configuration.nix` ++ Auto-generated hardware configuration
+    - `hardware` ++ Auto-generated hardware configuration
     - `home.nix` ++ User configuration
 - `modules`
   - `home-manager` ++ Custom `home-manager` modules
@@ -28,5 +28,6 @@ $ just deploy
 - `nixos` ++ System environment
 - `overlays` ++ Custom overlays
 - `pkgs` ++ Custom packages
+- `secrets` ++ Secrets not tracked by `git`
 - `flake.nix` ++ Entrypoint
 - `justfile` ++ Useful commands

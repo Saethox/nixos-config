@@ -5,7 +5,8 @@
       keepassxc # Password manager
       signal-desktop # Signal client
       pympress # Presentation software
-      inkscape # Inkscape
+      inkscape # Edit SVGs
+      imagemagick # Edit bitmap images
       pandoc # Document conversion
       zoom-us # Zoom client
       zotero # Literature management

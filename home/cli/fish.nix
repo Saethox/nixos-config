@@ -2,7 +2,6 @@
   home.packages = with pkgs.fishPlugins; [
     done # Notifications
     forgit # Git additions
-    # hydro # Prompt
     fzf-fish # Key bindings for fzf
     grc # Colorize using grc
     autopair # Matching pairs

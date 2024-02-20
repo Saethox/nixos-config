@@ -8,14 +8,11 @@
   ];
 
   home.packages =
-    # Stable packages.
     (with pkgs; [
       fzf # Fuzzy finder
       grc # Text colorizer
     ])
-    ++
-    # Unstable (and therefore fancy cutting-edge) packages.
-    (with pkgs.unstable; [
+    ++ (with pkgs.unstable; [
       gitui # Terminal git UI
       nil # Nix language server
       alejandra # Nix formatter
