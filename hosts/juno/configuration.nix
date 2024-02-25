@@ -1,4 +1,4 @@
-# system configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
+# system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
 {
   inputs,
   lib,
@@ -8,19 +8,15 @@
     # Global system configuration.
     ../../nixos
 
-    ../../nixos/desktop/x11 # X11 Windowing System
-    ../../nixos/desktop/x11/plasma # Plasma Desktop
-    ../../nixos/desktop/x11/touchpad.nix # Touchpad + Gestures
-    ../../nixos/mounts/uni.nix # Uni drives
-
     # Input modules.
 
-    # nixos-hardware settings for Lenovo ThinkPad X1 Carbon Gen 11.
-    inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen 
+    # nixos-hardware settings for Lenovo ThinkBook 16p Gen 2.
+    inputs.hardware.nixosModules.common-cpu-amd-pstate
+    inputs.hardware.nixosModules.common-gpu-nvidia
+    inputs.hardware.nixosModules.common-pc-laptop-ssd
 
     # Device-specific configuration.
     ./hardware # Auto-generated (nixos-generate-config) hardware configuration.
-    ./desktop/x11/autorandr # Monitor profiles
   ];
 
   # Bootloader
@@ -28,7 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Set the hostname.
-  networking.hostName = "ceres";
+  networking.hostName = "juno";
 
   # Enable networking.
   networking.networkmanager.enable = true;
@@ -44,7 +40,7 @@
   services.thermald.enable = true;
 
   # Configure system-wide user settings (groups, etc), add more users as needed.
-  users.users.wurthjon = {
+  users.users.joni = {
     isNormalUser = true;
     description = "Jonathan Wurth";
     uid = 1000;
@@ -58,7 +54,7 @@
   };
 
   # Overwrite number of jobs used for building with number of threads.
-  nix.settings.max-jobs = lib.mkForce 12;
+  nix.settings.max-jobs = lib.mkForce 16;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

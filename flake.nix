@@ -35,6 +35,27 @@
       "x86_64-linux"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    nixosSystem = {system, hostname, username}:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # Global
+          ./hosts/${hostname}/configuration.nix
+          # Home
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              # Use the global nixpkgs instance.
+              useGlobalPkgs = true;
+              # Store user packages in `/etc/profiles/per-user/<username>`.
+              useUserPackages = true;
+              # User
+              extraSpecialArgs = {inherit inputs outputs;};
+              users.${username} = import ./hosts/${hostname}/home.nix;
+            };
+          }
+        ];
+      };
   in {
     # Custom packages accessible through `nix build`, `nix shell`, etc.
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -70,6 +91,27 @@
               # User
               extraSpecialArgs = {inherit inputs outputs;};
               users.wurthjon = import ./hosts/ceres/home.nix;
+            };
+          }
+        ];
+      };
+      # Private Laptop
+      juno = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # Global
+          ./hosts/juno/configuration.nix
+          # Home
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              # Use the global nixpkgs instance.
+              useGlobalPkgs = true;
+              # Store user packages in `/etc/profiles/per-user/<username>`.
+              useUserPackages = true;
+              # User
+              extraSpecialArgs = {inherit inputs outputs;};
+              users.joni = import ./hosts/juno/home.nix;
             };
           }
         ];
