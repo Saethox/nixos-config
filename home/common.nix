@@ -12,6 +12,7 @@
       zotero # Literature management
       gimp # Image editing
       gparted # Partition tool
+      thunderbird # Email client
       firefox # Browser
       (opera.override {proprietaryCodecs = true;}) # Alternative Browser
     ])
