@@ -4,13 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.modules.starship;
+  cfg = config.modules.cli.starship;
 in {
-  options.modules.starship.enable = lib.mkOption {
-    default = false;
-    example = true;
-    description = "Enable starship prompts.";
-  };
+  options.modules.cli.starship.enable = lib.mkEnableOption "starship";
 
   config = lib.mkIf cfg.enable {
     programs.starship = {

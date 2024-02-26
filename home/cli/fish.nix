@@ -4,13 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.modules.fish;
+  cfg = config.modules.cli.fish;
 in {
-  options.modules.fish.enable = lib.mkOption {
-    default = false;
-    example = true;
-    description = "Enable fish with plugins.";
-  };
+  options.modules.cli.fish.enable = lib.mkEnableOption "fish with plugins";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs.fishPlugins; [

@@ -10,21 +10,19 @@ in {
     ./direnv.nix
     ./eza.nix
     ./fish.nix
+    ./git.nix
     ./starship.nix
   ];
 
-  options.modules.cli.enable = lib.mkOption {
-    default = false;
-    example = true;
-    description = "Enable CLI tools.";
-  };
+  options.modules.cli.enable = lib.mkEnableOption "CLI packages";
 
   config = lib.mkIf cfg.enable {
     # Enable submodules.
-    modules.direnv.enable = lib.mkDefault true;
-    modules.eza.enable = lib.mkDefault true;
-    modules.fish.enable = lib.mkDefault true;
-    modules.starship.enable = lib.mkDefault true;
+    modules.cli.direnv.enable = lib.mkDefault true;
+    modules.cli.eza.enable = lib.mkDefault true;
+    modules.cli.fish.enable = lib.mkDefault true;
+    modules.cli.starship.enable = lib.mkDefault true;
+    modules.cli.git.enable = lib.mkDefault true;
 
     # Other packages.
     home.packages =

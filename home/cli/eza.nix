@@ -3,13 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.modules.eza;
+  cfg = config.modules.cli.eza;
 in {
-  options.modules.eza.enable = lib.mkOption {
-    default = false;
-    example = true;
-    description = "Enable eza and replace ls.";
-  };
+  options.modules.cli.eza.enable = lib.mkEnableOption "eza with ls replacement";
 
   config = lib.mkIf cfg.enable {
     programs.eza = {

@@ -3,13 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.modules.direnv;
+  cfg = config.modules.cli.direnv;
 in {
-  options.modules.direnv.enable = lib.mkOption {
-    default = false;
-    example = true;
-    description = "Enable direnv.";
-  };
+  options.modules.cli.direnv.enable = lib.mkEnableOption "direnv";
 
   config = lib.mkIf cfg.enable {
     programs.direnv = {

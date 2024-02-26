@@ -6,11 +6,10 @@
   ...
 }: {
   imports = [
-    ./common.nix # Common programs and packages
-    ./cli # CLI tools
-    ./dev # Dev tools
-    ./git
-    ./git/work.nix
+    ./cli
+    ./desktop
+    ./dev
+    ./profiles
 
     # Input modules.
     inputs.flatpaks.homeManagerModules.nix-flatpak # Declarative flatpaks
@@ -40,7 +39,7 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  # Custom modules.
+  # Enable CLI tools by default.
   modules.cli.enable = lib.mkDefault true;
 
   # Enable home-manager.
