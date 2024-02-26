@@ -35,7 +35,12 @@
       "x86_64-linux"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-    nixosSystem = {system, hostname, username}:
+
+    # Enable identical options for all NixOS systems.
+    nixosSystem = {
+      hostname,
+      username,
+    }:
       nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
@@ -75,46 +80,14 @@
     # Available through `nixos-rebuild --flake .#<hostname>` or `just deploy`.
     nixosConfigurations = {
       # Work Laptop
-      ceres = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # Global
-          ./hosts/ceres/configuration.nix
-          # Home
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              # Use the global nixpkgs instance.
-              useGlobalPkgs = true;
-              # Store user packages in `/etc/profiles/per-user/<username>`.
-              useUserPackages = true;
-              # User
-              extraSpecialArgs = {inherit inputs outputs;};
-              users.wurthjon = import ./hosts/ceres/home.nix;
-            };
-          }
-        ];
+      ceres = nixosSystem {
+        hostname = "ceres";
+        username = "wurthjon";
       };
       # Private Laptop
-      juno = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # Global
-          ./hosts/juno/configuration.nix
-          # Home
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              # Use the global nixpkgs instance.
-              useGlobalPkgs = true;
-              # Store user packages in `/etc/profiles/per-user/<username>`.
-              useUserPackages = true;
-              # User
-              extraSpecialArgs = {inherit inputs outputs;};
-              users.joni = import ./hosts/juno/home.nix;
-            };
-          }
-        ];
+      juno = nixosSystem {
+        hostname = "juno";
+        username = "joni";
       };
     };
   };

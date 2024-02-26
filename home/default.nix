@@ -9,6 +9,8 @@
     ./common.nix # Common programs and packages
     ./cli # CLI tools
     ./dev # Dev tools
+    ./git
+    ./git/work.nix
 
     # Input modules.
     inputs.flatpaks.homeManagerModules.nix-flatpak # Declarative flatpaks
@@ -38,11 +40,11 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+  # Custom modules.
+  modules.cli.enable = lib.mkDefault true;
+
   # Enable home-manager.
   programs.home-manager.enable = true;
-
-  # Enable git.
-  programs.git.enable = true;
 
   # Nicely reload system units when changing configs.
   systemd.user.startServices = "sd-switch";
