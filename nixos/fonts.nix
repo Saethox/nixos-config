@@ -1,25 +1,36 @@
-{pkgs, ...}: {
-  fonts.packages = with pkgs; [
-    # Fonts
-    libertine
-    inconsolata
-    cm_unicode
-    fira
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  cfg = config.modules.fonts;
+in {
+  options.modules.fonts.enable = lib.mkEnableOption "flatpak";
 
-    # Icon fonts
-    material-design-icons
-    font-awesome
+  config = lib.mkIf cfg.enable {
+    fonts.packages = with pkgs; [
+      # Fonts
+      libertine
+      inconsolata
+      cm_unicode
+      fira
 
-    # Nerdfonts
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "FiraCode"
-      ];
-    })
-  ];
+      # Icon fonts
+      material-design-icons
+      font-awesome
 
-  fonts.fontconfig.defaultFonts = {
-    monospace = ["JetBrainsMono Nerd Font"];
+      # Nerdfonts
+      (nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+          "FiraCode"
+        ];
+      })
+    ];
+
+    fonts.fontconfig.defaultFonts = {
+      monospace = ["JetBrainsMono Nerd Font"];
+    };
   };
 }

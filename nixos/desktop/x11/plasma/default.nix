@@ -1,21 +1,31 @@
 {
-  pkgs,
+  config,
   lib,
+  pkgs,
   ...
-}: {
-  services.xserver = {
-    # Login manager sddm has to be configured explicitly.
-    displayManager.sddm = {
-      enable = true;
-      theme = lib.mkDefault "breeze";
-      enableHidpi = true;
-    };
-    # Enable the KDE Plasma Desktop Environment.
-    desktopManager.plasma5.enable = true;
+}: let
+  cfg = config.modules.desktop.x11.plasma;
+in {
+  options.modules.desktop.x11.plasma = {
+    enable = lib.mkEnableOption "KDE Plasma Desktop Environment";
   };
 
-  environment.systemPackages = with pkgs; [
-    libsForQt5.bismuth # Bismuth window tiling manager extension
-    libsForQt5.breeze-qt5 # Breeze theme
-  ];
+  config = lib.mkIf cfg.enable {
+    modules.desktop.x11.enable = true;
+
+    services.xserver = {
+      desktopManager.plasma5.enable = true;
+      # Login manager sddm has to be configured explicitly.
+      displayManager.sddm = {
+        enable = true;
+        theme = lib.mkDefault "breeze";
+        enableHidpi = true;
+      };
+    };
+
+    environment.systemPackages = with pkgs; [
+      libsForQt5.bismuth # Bismuth window tiling manager extension
+      libsForQt5.breeze-qt5 # Breeze theme
+    ];
+  };
 }

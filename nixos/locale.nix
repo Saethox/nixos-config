@@ -15,9 +15,13 @@
     LC_TIME = lib.mkDefault "de_DE.UTF-8";
   };
 
-  # Set timezone.
-  time.timeZone = "Europe/Berlin";
-
-  # Configure console keymap
+  # Configure keymap
   console.keyMap = "de";
+  services.xserver = {
+    layout = "de";
+    xkbVariant = "nodeadkeys";
+  };
+
+  # Set timezone.
+  time.timeZone = lib.mkDefault "Europe/Berlin";
 }

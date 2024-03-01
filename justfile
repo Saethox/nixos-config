@@ -11,13 +11,17 @@ default:
 deploy:
     nh os switch . --ask --nom
 
-# Deploy the system config with debug flags
+# Build the system config with debug flags
 debug:
-    nixos-rebuild switch --flake . --show-trace --verbose
+    nixos-rebuild build --flake . --show-trace --verbose
 
 # Update flake
 update:
     nix flake update
+
+# Update single flake input
+update-single input:
+    nix flake lock --update-input {{input}}
 
 # Show the history of the system
 history:

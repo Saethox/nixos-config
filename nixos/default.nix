@@ -7,13 +7,21 @@
   ...
 }: {
   imports = [
-    ./locale.nix
-    ./fonts.nix
-    ./virtualization.nix
-    ./flatpak.nix
-    ./mullvad.nix
     ./cli
+    ./desktop
+    ./mounts
+    ./flatpak.nix
+    ./fonts.nix
+    ./laptop.nix
+    ./locale.nix
+    ./mullvad.nix
+    ./openssh.nix
+    ./sound.nix
+    ./virtualization.nix
   ];
+
+  # Default modules.
+  modules.cli.enable = lib.mkDefault true;
 
   # Configure global nixpkgs instance.
   nixpkgs = {

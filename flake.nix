@@ -36,8 +36,8 @@
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
-    # Enable identical options for all NixOS systems.
-    nixosSystem = {
+    # Enable identical options for all hosts.
+    hostConfiguration = {
       hostname,
       username,
     }:
@@ -80,12 +80,12 @@
     # Available through `nixos-rebuild --flake .#<hostname>` or `just deploy`.
     nixosConfigurations = {
       # Work Laptop
-      ceres = nixosSystem {
+      ceres = hostConfiguration {
         hostname = "ceres";
         username = "wurthjon";
       };
       # Private Laptop
-      juno = nixosSystem {
+      juno = hostConfiguration {
         hostname = "juno";
         username = "joni";
       };

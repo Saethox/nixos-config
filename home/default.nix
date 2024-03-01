@@ -15,6 +15,10 @@
     inputs.flatpaks.homeManagerModules.nix-flatpak # Declarative flatpaks
   ];
 
+  # Default modules.
+  modules.cli.enable = lib.mkDefault true;
+
+  # Inherit username and home directory.
   home = {
     username = lib.mkDefault config.home.username;
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
@@ -38,9 +42,6 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
-
-  # Enable CLI tools by default.
-  modules.cli.enable = lib.mkDefault true;
 
   # Enable home-manager.
   programs.home-manager.enable = true;

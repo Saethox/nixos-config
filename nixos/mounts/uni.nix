@@ -1,4 +1,11 @@
-{pkgs, ...}: let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  cfg = config.modules.mounts.uni;
+
   # Requires `nixos-config` to be symlinked to `/etc/nixos`.
   credentials = /etc/nixos/secrets/smb;
   # Options prevent hanging on network split.
@@ -15,20 +22,24 @@
     "credentials=${credentials}"
   ];
 in {
-  # For mount.cifs, required unless domain name resolution is not needed.
-  environment.systemPackages = [pkgs.cifs-utils];
+  options.modules.mounts.uni.enable = lib.mkEnableOption "uni samba";
 
-  # Home drive.
-  fileSystems."/mnt/share/uni-home" = {
-    device = "//cfs-smb.rz.uni-augsburg.de/wurthjon";
-    fsType = "cifs";
-    inherit options;
-  };
+  config = lib.mkIf cfg.enable {
+    # For mount.cifs, required unless domain name resolution is not needed.
+    environment.systemPackages = [pkgs.cifs-utils];
 
-  # OC drive.
-  fileSystems."/mnt/share/uni-oc" = {
-    device = "//cfs-smb.rz.uni-augsburg.de/oc-m";
-    fsType = "cifs";
-    inherit options;
+    # Home drive.
+    fileSystems."/mnt/share/uni-home" = {
+      device = "//cfs-smb.rz.uni-augsburg.de/wurthjon";
+      fsType = "cifs";
+      inherit options;
+    };
+
+    # OC drive.
+    fileSystems."/mnt/share/uni-oc" = {
+      device = "//cfs-smb.rz.uni-augsburg.de/oc-m";
+      fsType = "cifs";
+      inherit options;
+    };
   };
 }

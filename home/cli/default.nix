@@ -14,7 +14,7 @@ in {
     ./starship.nix
   ];
 
-  options.modules.cli.enable = lib.mkEnableOption "CLI packages";
+  options.modules.cli.enable = lib.mkEnableOption "cli";
 
   config = lib.mkIf cfg.enable {
     # Enable submodules.

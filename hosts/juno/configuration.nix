@@ -2,6 +2,7 @@
 {
   inputs,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -23,6 +24,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Set the hostname.
   networking.hostName = "juno";
 
@@ -34,10 +38,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Power management.
-  services.auto-cpufreq.enable = true;
-  services.thermald.enable = true;
 
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {

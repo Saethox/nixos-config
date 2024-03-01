@@ -1,7 +1,6 @@
 # home-manager configuration file of 'ceres' (replaces ~/.config/nixpkgs/home.nix).
 {
   imports = [
-    # Global home configuration.
     ../../home
 
     # Device-specific home configuration.
