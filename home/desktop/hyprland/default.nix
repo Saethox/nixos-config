@@ -15,16 +15,19 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
+        inputs = {
+          kb_layout = "de";
+          kb_variant = "nodeadkeys";
+        };
         env =
           [
             "NIXOS_OZONE_WL,1" # Hint electron apps to use wayland
-
             # Firefox on Wayland.
             "MOZ_ENABLE_WAYLAND,1"
             "MOZ_WEBRENDER,1"
           ]
           # https://wiki.hyprland.org/Nvidia/
-          ++ lib.lists.optional cfg.nvidia [
+          ++ lib.lists.optionals cfg.nvidia [
             "LIBVA_DRIVER_NAME,nvidia"
             "XDG_SESSION_TYPE,wayland"
             "GBM_BACKEND,nvidia-drm"
