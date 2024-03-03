@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  cfg = config.modules.fonts;
+  cfg = config.modules.desktop.fonts;
 in {
   options.modules.desktop.fonts.enable = lib.mkEnableOption "custom fonts";
 

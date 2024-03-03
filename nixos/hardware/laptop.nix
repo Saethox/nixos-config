@@ -5,7 +5,7 @@
 }: let
   cfg = config.modules.hardware.laptop;
 in {
-  options.modules.laptop.enable = lib.mkEnableOption "laptop settings";
+  options.modules.hardware.laptop.enable = lib.mkEnableOption "laptop settings";
 
   config = lib.mkIf cfg.enable {
     services.auto-cpufreq.enable = true;

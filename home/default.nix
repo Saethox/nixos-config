@@ -10,6 +10,7 @@
     ./desktop
     ./dev
     ./profiles
+    ./programs
 
     # Input modules.
     inputs.flatpaks.homeManagerModules.nix-flatpak # Declarative flatpaks
