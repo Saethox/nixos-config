@@ -11,7 +11,6 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages =
       (with pkgs; [
-        kate # Text editor
         keepassxc # Password manager
         signal-desktop # Signal client
         gimp # Image editing
