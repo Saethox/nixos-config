@@ -1,18 +1,8 @@
 # system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   imports = [
-    # Global system configuration.
     ../../nixos
-
-    # Input modules.
-
-    # Device-specific configuration.
-    ./hardware # Auto-generated (nixos-generate-config) hardware configuration.
+    ./hardware
   ];
 
   # Set the hostname.
