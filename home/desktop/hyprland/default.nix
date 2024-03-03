@@ -33,22 +33,32 @@ in {
             "WLR_NO_HARDWARE_CURSORS,1"
           ];
       };
+      extraConfig = builtins.readFile ./hyprland.conf;
       systemd.enable = true;
     };
 
     home.packages = with pkgs.unstable; [
       hyprpaper # Wallpaper
-      swaynotificationcenter # Notifications
-      swaylock-effects # Lock Screen
-      swayidle # Idle manager
       rofi-wayland # Task runner
       (waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
       })) # Status bar
       kitty # Terminal
-      wlogout # Logout menu
       wl-clipboard # Clipboard
+
+      swaynotificationcenter # Notifications
+      swaylock-effects # Lock Screen
+      swayidle # Idle manager
+      wlogout # Logout menu
       networkmanagerapplet # Network GUI
+
+      gnome.nautilus
     ];
+
+    services.mpd = {
+      enable = true;
+      dbFile = "~/.config/mpd/database";
+      musicDirectory = "~/Music";
+    };
   };
 }
