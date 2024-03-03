@@ -20,10 +20,8 @@ in {
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = [pkgs.unstable.xdg-desktop-portal-hyprland];
+      # extraPortals = [pkgs.unstable.xdg-desktop-portal-wlr];
     };
-
-    security.pam.service.swaylock = {};
 
     services.xserver = {
       enable = true;
