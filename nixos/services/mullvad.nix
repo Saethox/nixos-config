@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.modules.mullvad;
+  cfg = config.modules.services.mullvad;
 in {
-  options.modules.mullvad.enable = lib.mkEnableOption "mullvad VPN";
+  options.modules.services.mullvad.enable = lib.mkEnableOption "Mullvad VPN";
 
   config = lib.mkIf cfg.enable {
     services.mullvad-vpn.enable = true;

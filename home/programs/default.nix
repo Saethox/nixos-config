@@ -1,5 +1,5 @@
 {
   imports = [
-    ./gestures
+    ./common.nix
   ];
 }

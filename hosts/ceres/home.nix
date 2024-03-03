@@ -7,12 +7,12 @@
     # Add modules here.
   ];
 
-  # Enable plasma touchpad gestures.
-  modules.desktop.x11.plasma.gestures.enable = true;
+  # Enable x11 touchpad gestures.
+  modules.desktop.x11.gestures.enable = true;
 
   # Enable desktop programs.
-  modules.desktop.programs.enable = true;
-  
+  modules.programs.common.enable = true;
+
   # Enable Rust and Python.
   modules.dev.rust.enable = true;
   modules.dev.python3.enable = true;

@@ -16,7 +16,7 @@
   ];
 
   # Default modules.
-  modules.cli.enable = lib.mkDefault true;
+  modules.cli.common.enable = lib.mkDefault true;
 
   # Inherit username and home directory.
   home = {

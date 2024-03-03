@@ -9,19 +9,18 @@
   imports = [
     ./cli
     ./desktop
+    ./hardware
     ./mounts
-    ./flatpak.nix
-    ./fonts.nix
-    ./laptop.nix
     ./locale.nix
-    ./mullvad.nix
-    ./openssh.nix
-    ./sound.nix
-    ./virtualization.nix
   ];
 
   # Default modules.
-  modules.cli.enable = lib.mkDefault true;
+  modules.cli.common.enable = lib.mkDefault true;
+
+  services.flatpak.enable = true;
+
+  virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # Configure global nixpkgs instance.
   nixpkgs = {

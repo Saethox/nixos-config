@@ -11,33 +11,21 @@
 
     # Input modules.
 
-    # nixos-hardware settings for Lenovo ThinkBook 16p Gen 2.
-    inputs.hardware.nixosModules.common-cpu-amd-pstate
-    inputs.hardware.nixosModules.common-gpu-nvidia
-    inputs.hardware.nixosModules.common-pc-laptop-ssd
-
     # Device-specific configuration.
     ./hardware # Auto-generated (nixos-generate-config) hardware configuration.
   ];
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Set the hostname.
   networking.hostName = "juno";
 
-  # Enable networking.
-  networking.networkmanager.enable = true;
-
-  # Enable bluetooth.
-  hardware.bluetooth.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable Wayland Gnome Desktop.
+  modules.desktop.gnome.enable = true;
+
+  # Enable mullvad.
+  modules.services.mullvad.enable = true;
 
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {

@@ -6,35 +6,24 @@
   imports = [
     ./hardware-configuration.nix
 
-    # nixos-hardware settings for Lenovo ThinkPad X1 Carbon Gen 11.
-    inputs.hardware.nixosModules.lenovo-thinkpad-x1-11th-gen
+    # nixos-hardware settings for Lenovo ThinkBook 16p Gen 2.
+    inputs.hardware.nixosModules.common-cpu-amd-pstate
+    inputs.hardware.nixosModules.common-gpu-nvidia
+    inputs.hardware.nixosModules.common-pc-laptop-ssd
   ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Enable networking.
   networking.networkmanager.enable = true;
 
   # Enable bluetooth.
   hardware.bluetooth.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable fingerprint.
   services.fprintd = {

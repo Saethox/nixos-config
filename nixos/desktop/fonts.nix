@@ -6,7 +6,7 @@
 }: let
   cfg = config.modules.fonts;
 in {
-  options.modules.fonts.enable = lib.mkEnableOption "flatpak";
+  options.modules.desktop.fonts.enable = lib.mkEnableOption "custom fonts";
 
   config = lib.mkIf cfg.enable {
     fonts.packages = with pkgs; [

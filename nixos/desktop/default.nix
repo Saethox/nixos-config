@@ -1,6 +1,7 @@
 {
   imports = [
-    ./wayland
-    ./x11
+    ./gnome
+    ./plasma5
+    ./fonts.nix
   ];
 }

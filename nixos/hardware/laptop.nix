@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  cfg = config.modules.laptop;
+  cfg = config.modules.hardware.laptop;
 in {
   options.modules.laptop.enable = lib.mkEnableOption "laptop settings";
 

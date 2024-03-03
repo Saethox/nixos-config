@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.modules.desktop.programs;
+  cfg = config.modules.programs.common;
 in {
-  options.modules.desktop.programs.enable = lib.mkEnableOption "desktop packages";
+  options.modules.programs.common.enable = lib.mkEnableOption "common desktop packages";
 
   config = lib.mkIf cfg.enable {
     home.packages =
