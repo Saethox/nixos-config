@@ -19,8 +19,8 @@ $ just deploy
 - `home` ++ User environment managed with [`home-manager`](https://github.com/nix-community/home-manager)
 - `hosts` ++ Host-specific configuration
   - `ceres`
-    - `configuration.nix` ++ System configuration
     - `hardware` ++ Auto-generated hardware configuration
+    - `configuration.nix` ++ System configuration
     - `home.nix` ++ User configuration
 - `modules`
   - `home-manager` ++ Custom `home-manager` modules
