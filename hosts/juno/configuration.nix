@@ -14,6 +14,9 @@
   # Enable Wayland Gnome Desktop.
   modules.desktop.gnome.enable = true;
 
+  # Enable Hyprland.
+  modules.desktop.hyprland.enable = true;
+
   # Enable mullvad.
   modules.services.mullvad.enable = true;
 

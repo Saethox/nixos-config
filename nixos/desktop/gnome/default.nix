@@ -18,7 +18,7 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      gnomeExtensions.gesture-improvements # Touchpad gestures
+      gnomeExtensions.swap-finger-gestures-3-to-4
     ];
 
     # Fonts.
