@@ -12,6 +12,7 @@ $ just deploy
 ## Hosts
 
 - Ceres (Lenovo Thinkpad X1 Carbon Gen 11)
+- Juno (Lenovo ThinkBook 16p Gen 2 ACH)
 
 ## Structure
 

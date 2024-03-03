@@ -8,7 +8,7 @@
 
     # nixos-hardware settings for Lenovo ThinkBook 16p Gen 2.
     inputs.hardware.nixosModules.common-cpu-amd-pstate
-    inputs.hardware.nixosModules.common-gpu-nvidia
+    # inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-pc-laptop-ssd
   ];
 
