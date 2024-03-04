@@ -15,7 +15,7 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        inputs = {
+        input = {
           kb_layout = "de";
           kb_variant = "nodeadkeys";
         };
@@ -58,10 +58,17 @@ in {
       gnome.nautilus
     ];
 
+    # Configure mpd.
     services.mpd = {
       enable = true;
       dbFile = "~/.config/mpd/database";
       musicDirectory = "~/Music";
     };
+
+    xdg.configFile."hypr/hyprpaper.conf".text = ''
+      preload = ~/Pictures/1351305.png
+      wallpaper = ,~/Pictures/1351305.png
+      splash = true
+    '';
   };
 }
