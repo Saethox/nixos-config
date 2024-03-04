@@ -15,6 +15,8 @@ in {
       inconsolata
       cm_unicode
       fira
+      overpass
+      rubik
 
       # Icon fonts
       material-design-icons
