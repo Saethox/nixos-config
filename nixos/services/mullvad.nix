@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.modules.services.mullvad;
@@ -8,7 +9,10 @@ in {
   options.modules.services.mullvad.enable = lib.mkEnableOption "Mullvad VPN";
 
   config = lib.mkIf cfg.enable {
-    services.mullvad-vpn.enable = true;
+    services.mullvad-vpn = {
+      enable = true;
+      package = pkgs.unstable.mullvad-vpn;
+    };
 
     # https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/13
     networking.resolvconf.extraConfig = ''
