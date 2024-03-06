@@ -10,6 +10,9 @@
   # Enable desktop programs.
   modules.programs.common.enable = true;
 
+  # Enable python.
+  modules.dev.python3.enable = true;
+
   # Enable Hyprland.
   modules.desktop.hyprland = {
     enable = true;
