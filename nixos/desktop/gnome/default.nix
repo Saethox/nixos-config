@@ -17,8 +17,11 @@ in {
       displayManager.gdm.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      gnomeExtensions.swap-finger-gestures-3-to-4
+    security.pam.services.gdm.enableGnomeKeyring = true;
+
+    environment.systemPackages = with pkgs; with gnomeExtensions; [
+      swap-finger-gestures-3-to-4
+      appindicator
     ];
 
     # Fonts.

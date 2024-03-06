@@ -7,7 +7,7 @@
   cfg = config.modules.desktop.plasma5;
 in {
   options.modules.desktop.plasma5 = {
-    enable = lib.mkEnableOption "KDE Plasma Desktop Environment";
+    enable = lib.mkEnableOption "KDE Plasma 5 Desktop Environment";
   };
 
   config = lib.mkIf cfg.enable {
@@ -22,9 +22,10 @@ in {
       };
     };
 
-    environment.systemPackages = with pkgs; [
-      libsForQt5.bismuth # Bismuth window tiling manager extension
-      libsForQt5.breeze-qt5 # Breeze theme
+    environment.systemPackages = with pkgs; with libsForQt5; [
+      kate # Text editor
+      bismuth # Bismuth window tiling manager extension
+      breeze-qt5 # Breeze theme
       arandr # GUI for xrandr
     ];
 
