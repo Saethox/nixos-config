@@ -18,10 +18,12 @@ in {
         pandoc # Document conversion
         zoom-us # Zoom client
         zotero # Literature management
+        libreoffice-qt # Documents
       ])
       ++ (with pkgs.unstable; [
         jabref # Literature management
         zettlr # Alternative Obsidian
+        eduvpn-client # eduVPN
       ]);
 
     services.flatpak.packages = [
