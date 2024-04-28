@@ -14,6 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+      package = pkgs.unstable.hyprland;
       settings = {
         input = {
           kb_layout = "de";
