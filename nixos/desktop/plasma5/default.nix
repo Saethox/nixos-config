@@ -22,7 +22,8 @@ in {
       };
     };
 
-    environment.systemPackages = with pkgs; with libsForQt5; [
+    environment.systemPackages = with pkgs;
+    with libsForQt5; [
       kate # Text editor
       bismuth # Bismuth window tiling manager extension
       breeze-qt5 # Breeze theme

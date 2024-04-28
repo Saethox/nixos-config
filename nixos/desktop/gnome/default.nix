@@ -19,7 +19,8 @@ in {
 
     security.pam.services.gdm.enableGnomeKeyring = true;
 
-    environment.systemPackages = with pkgs; with gnomeExtensions; [
+    environment.systemPackages = with pkgs;
+    with gnomeExtensions; [
       swap-finger-gestures-3-to-4
       appindicator
     ];

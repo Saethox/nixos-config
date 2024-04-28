@@ -17,7 +17,8 @@ in {
       displayManager.gdm.enable = true;
     };
 
-    environment.systemPackages = with pkgs; with kdePackages; [
+    environment.systemPackages = with pkgs;
+    with kdePackages; [
       kate # Text editor
     ];
 
