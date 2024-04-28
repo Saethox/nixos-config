@@ -13,6 +13,7 @@ in {
       (with pkgs; [
         keepassxc # Password manager
         signal-desktop # Signal client
+        spotify # Music streaming
         gimp # Image editing
         gparted # Partition tool
         thunderbird # Email client
