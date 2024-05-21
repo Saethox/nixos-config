@@ -17,6 +17,8 @@ in {
       fira
       overpass
       rubik
+      symbola
+      fira-code
 
       # Icon fonts
       material-design-icons

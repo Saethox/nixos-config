@@ -9,7 +9,7 @@ default:
 
 # Deploy the system config
 deploy:
-    nh os switch . --ask --nom
+    nh os switch . --ask
 
 # Build the system config with debug flags
 debug:
