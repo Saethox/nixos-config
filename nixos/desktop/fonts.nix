@@ -19,6 +19,7 @@ in {
       rubik
       symbola
       fira-code
+      corefonts
 
       # Icon fonts
       material-design-icons
