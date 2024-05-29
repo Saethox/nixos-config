@@ -17,13 +17,14 @@ in {
         inkscape # Edit SVGs
         pandoc # Document conversion
         zoom-us # Zoom client
-        zotero # Literature management
+        # zotero # Literature management
         libreoffice-qt # Documents
       ])
       ++ (with pkgs.unstable; [
         jabref # Literature management
         zettlr # Alternative Obsidian
         eduvpn-client # eduVPN
+        zotero_7 # Literature management
       ]);
 
     services.flatpak.packages = [
