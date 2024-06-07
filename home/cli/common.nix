@@ -20,6 +20,7 @@ in {
       (with pkgs; [
         fzf # Fuzzy finder
         grc # Text colorizer
+        mc # File manager
       ])
       ++ (with pkgs.unstable; [
         gitui # Terminal git UI
