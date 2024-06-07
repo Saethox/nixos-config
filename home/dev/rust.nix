@@ -12,10 +12,7 @@ in {
   config = lib.mkIf cfg.enable {
     home = {
       packages = with pkgs; [
-        # `hiPrio` is needed because `llvm-binutils-wrapper/bin/ranlib` collides with `clang-wrapper/bin/ranlib`.
-        (hiPrio clang)
-        # Replace llvmPackages with llvmPackages_X, where X is the latest LLVM version (at the time of writing, 17).
-        llvmPackages_17.bintools
+        clang
         rustup
       ];
 
