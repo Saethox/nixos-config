@@ -12,6 +12,7 @@
     ./hardware
     ./mounts
     ./services
+    ./programs
     ./locale.nix
   ];
 

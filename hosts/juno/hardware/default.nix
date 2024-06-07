@@ -96,6 +96,8 @@
     nvidiaSettings = true;
 
     prime = {
+      sync.enable = true;
+
       # Make sure to use the correct Bus ID values for your system!
       # sudo lshw -c display
       intelBusId = "PCI:6:0:0";

@@ -20,6 +20,9 @@
   # Enable mullvad.
   modules.services.mullvad.enable = true;
 
+  # Enable steam.
+  modules.programs.steam.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
