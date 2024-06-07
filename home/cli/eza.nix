@@ -10,8 +10,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.eza = {
       enable = true;
-      # Replace `ls` with `eza`.
-      enableAliases = true;
+      enableFishIntegration = true;
       icons = true;
       git = true;
     };
