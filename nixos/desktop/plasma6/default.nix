@@ -11,11 +11,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.xserver = {
-      enable = true;
-      desktopManager.plasma6.enable = true;
-      displayManager.gdm.enable = true;
-    };
+    services.xserver.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.desktopManager.plasma6.enable = true;
+    programs.dconf.enable = true;
 
     environment.systemPackages = with pkgs;
     with kdePackages; [
