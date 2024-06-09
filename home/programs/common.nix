@@ -18,7 +18,6 @@ in {
         gparted # Partition tool
         thunderbird # Email client
         firefox # Browser
-        (opera.override {proprietaryCodecs = true;}) # Alternative Browser
       ])
       ++ (with pkgs.unstable; [
         jetbrains-toolbox # Jetbrains Toolbox
