@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # Nixpkgs unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -87,6 +87,11 @@
       # Private Laptop
       juno = hostConfiguration {
         hostname = "juno";
+        username = "joni";
+      };
+      # Private Desktop
+      titan = hostConfiguration {
+        hostname = "titan";
         username = "joni";
       };
     };

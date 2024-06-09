@@ -17,9 +17,9 @@
 
   # Configure keymap
   console.keyMap = "de";
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "de";
-    xkbVariant = "nodeadkeys";
+    variant = "nodeadkeys";
   };
 
   # Set timezone.
