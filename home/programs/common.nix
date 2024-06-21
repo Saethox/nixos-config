@@ -18,6 +18,7 @@ in {
         gparted # Partition tool
         thunderbird # Email client
         firefox # Browser
+        vlc # Media player
       ])
       ++ (with pkgs.unstable; [
         jetbrains-toolbox # Jetbrains Toolbox
