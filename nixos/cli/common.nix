@@ -27,6 +27,7 @@ in {
         micro # Text editor with mouse support
         just # Command runner
         htop # System monitor
+        mosh # Better ssh
       ])
       ++ (with pkgs.unstable; [
         lshw # Print hardware configuration
