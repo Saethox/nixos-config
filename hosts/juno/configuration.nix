@@ -1,5 +1,5 @@
 # system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
-{lib, ...}: {
+{lib, pkgs, ...}: {
   imports = [
     ../../nixos
     ./hardware
@@ -11,10 +11,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable Wayland Gnome Desktop.
+  # Enable desktop environments.
   modules.desktop.gnome.enable = true;
-
-  # Enable Hyprland.
   modules.desktop.hyprland.enable = true;
 
   # Enable mullvad.
