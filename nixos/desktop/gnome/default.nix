@@ -21,7 +21,8 @@ in {
 
     environment.systemPackages = with pkgs;
     with gnomeExtensions; [
-      swap-finger-gestures-3-to-4
+      # Broken as of 2024-06-29
+      # swap-finger-gestures-3-to-4
       appindicator
     ];
 

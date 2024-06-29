@@ -1,5 +1,9 @@
 # system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
-{lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../nixos
     ./hardware
