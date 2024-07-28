@@ -96,7 +96,7 @@
     nvidiaSettings = true;
 
     prime = {
-      sync.enable = true;
+      sync.enable = false;
 
       # Make sure to use the correct Bus ID values for your system!
       # sudo lshw -c display
@@ -105,8 +105,8 @@
 
       # Offload mode.
       offload = {
-        enable = false;
-        enableOffloadCmd = false;
+        enable = true;
+        enableOffloadCmd = true;
       };
     };
 
