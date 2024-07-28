@@ -25,8 +25,7 @@ in {
         vscode-fhs # VS Code
         obsidian # Markdown knowledge base
         nextcloud-client # Nextcloud Desktop
-        seafile-client # Seafile Desktop
-        mullvad-vpn # VPN (requires `services.mullvad-vpn`)
+        keymapp # Application for ZSA keyboards
       ]);
   };
 }

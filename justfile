@@ -19,8 +19,8 @@ debug:
 update:
     nix flake update
 
-# Update single flake input
-update-single input:
+# Update flake input
+update-input input:
     nix flake lock --update-input {{input}}
 
 # Show the history of the system

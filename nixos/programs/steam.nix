@@ -15,8 +15,8 @@ in {
       remotePlay.openFirewall = true;
     };
 
-    environment.systemPackages = with pkgs; [mangohud lutris bottles];
-
     programs.gamemode.enable = true;
+
+    environment.systemPackages = with pkgs; [mangohud lutris bottles];
   };
 }
