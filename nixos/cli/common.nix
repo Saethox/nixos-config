@@ -23,11 +23,11 @@ in {
 
         xclip # Clipboard
 
-        neofetch # Display system information
+        fastfetch # Display system information
         micro # Text editor with mouse support
         just # Command runner
-        htop # System monitor
-        mosh # Better ssh
+        btop # System monitor
+        mosh # More stable ssh
       ])
       ++ (with pkgs.unstable; [
         lshw # Print hardware configuration
