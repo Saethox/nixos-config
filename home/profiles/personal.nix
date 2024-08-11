@@ -16,6 +16,7 @@ in {
       ++ (with pkgs.unstable; [
         mullvad-vpn # VPN (requires `services.mullvad-vpn`)
         bazecor # Graphical configurator for Dygma Products
+        ckb-next # Driver and configuration tool for Corsair keyboards and mice
       ]);
   };
 }
