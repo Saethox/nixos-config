@@ -56,7 +56,7 @@ in {
       wlogout # Logout menu
       networkmanagerapplet # Network GUI
 
-      gnome.nautilus
+      nautilus
     ];
 
     # Configure mpd.
