@@ -14,12 +14,13 @@ in {
     services.xserver = {
       enable = true;
       desktopManager.plasma5.enable = true;
-      # Login manager sddm has to be configured explicitly.
-      displayManager.sddm = {
-        enable = true;
-        theme = lib.mkDefault "breeze";
-        enableHidpi = true;
-      };
+    };
+
+    # Login manager sddm has to be configured explicitly.
+    services.displayManager.sddm = {
+      enable = true;
+      theme = lib.mkDefault "breeze";
+      enableHidpi = true;
     };
 
     environment.systemPackages = with pkgs;
@@ -34,7 +35,7 @@ in {
     services.autorandr.enable = true;
 
     # Touchpad settings.
-    services.xserver.libinput.enable = lib.mkDefault true;
+    services.libinput.enable = lib.mkDefault true;
     services.touchegg.enable = lib.mkDefault true;
 
     # Fonts.
