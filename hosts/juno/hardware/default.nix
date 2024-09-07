@@ -17,7 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
+  # Use zen kernel for now.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -112,6 +112,14 @@
     };
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Manually specify version until nixpkgs has newer version than 550.78.
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "550.100";
+      sha256_64bit = "sha256-imtfsoe/EfUFZzR4S9pkwQZKCcKqefayJewPtW0jgC0=";
+      sha256_aarch64 = "sha256-AWHdMtCci8i7maNjVapOT6kyVuFaP81jJyTRLjEyMzo=";
+      openSha256 = "sha256-3g0f88xGMTB0mx4kVan3ipLtnJFFIKi58ss/1lqC3Sw=";
+      settingsSha256 = "sha256-cDxhzZCDLtXOas5OlodNYGIuscpKmIGyvhC/kAQaxLc=";
+      persistencedSha256 = "sha256-gXHBR2+1+YZE2heRArfrZpEF3rO7R92ChuQN+ISpil8=";
+    };
   };
 }
