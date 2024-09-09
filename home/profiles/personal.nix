@@ -12,6 +12,7 @@ in {
     home.packages =
       (with pkgs; [
         discord # All-in-one cross-platform voice and text chat
+        prismlauncher # Free, open source launcher for Minecraft
       ])
       ++ (with pkgs.unstable; [
         mullvad-vpn # VPN (requires `services.mullvad-vpn`)
