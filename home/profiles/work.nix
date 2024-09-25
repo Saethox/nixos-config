@@ -24,7 +24,7 @@ in {
         jabref # Literature management
         zettlr # Alternative Obsidian
         eduvpn-client # eduVPN
-        zotero_7 # Literature management
+        zotero # Literature management
       ]);
 
     services.flatpak.packages = [
