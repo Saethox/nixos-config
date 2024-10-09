@@ -18,12 +18,8 @@
 
   # Default modules.
   modules.cli.common.enable = lib.mkDefault true;
-
   services.flatpak.enable = true;
-
   virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   # Configure global nixpkgs instance.
   nixpkgs = {
