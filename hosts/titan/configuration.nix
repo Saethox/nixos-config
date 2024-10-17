@@ -1,5 +1,9 @@
 # system configuration file of 'titan' (replaces /etc/nixos/configuration.nix).
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../nixos
     ./hardware
@@ -20,6 +24,9 @@
   # Enable steam.
   modules.programs.steam.enable = true;
 
+  # Enable virt-manager.
+  modules.programs.virt.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
@@ -31,6 +38,16 @@
       "libvirtd"
       "docker"
       "input"
+      "gamemode"
+    ];
+  };
+
+  # Set console font.
+  console = {
+    earlySetup = true;
+    font = "ter-114n";
+    packages = with pkgs; [
+      terminus_font
     ];
   };
 
