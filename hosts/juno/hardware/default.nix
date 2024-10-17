@@ -112,6 +112,7 @@
     };
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
     # Manually specify version until nixpkgs has newer version than 550.78.
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "550.107.02";
