@@ -59,6 +59,9 @@
   # Overwrite number of jobs used for building with number of threads.
   nix.settings.max-jobs = lib.mkForce 12;
 
+  # Add as trusted user of the Nix store.
+  nix.settings.trusted-users = ["root" "joni"];
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }

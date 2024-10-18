@@ -1,3 +1,3 @@
 {
-  ceres = builtins.readFile ./ceres.pub; 
+  ceres = builtins.readFile ./ceres.pub;
 }

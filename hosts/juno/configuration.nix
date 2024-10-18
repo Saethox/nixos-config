@@ -1,9 +1,5 @@
 # system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   imports = [
     ../../nixos
     ./hardware
@@ -45,6 +41,9 @@
 
   # Overwrite number of jobs used for building with number of threads.
   nix.settings.max-jobs = lib.mkForce 16;
+
+  # Add as trusted user of the Nix store.
+  nix.settings.trusted-users = ["root" "joni"];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
