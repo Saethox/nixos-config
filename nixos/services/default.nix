@@ -1,6 +1,6 @@
 {
   imports = [
     ./mullvad.nix
-    ./openssh.nix
+    ./ssh.nix
   ];
 }

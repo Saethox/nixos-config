@@ -2,6 +2,7 @@
 {
   lib,
   pkgs,
+  outputs,
   ...
 }: {
   imports = [
@@ -27,6 +28,9 @@
   # Enable virt-manager.
   modules.programs.virt.enable = true;
 
+  # Enable ssh server.
+  modules.services.ssh.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
@@ -40,12 +44,13 @@
       "input"
       "gamemode"
     ];
+    openssh.authorizedKeys.keys = builtins.attrValues outputs.constants.pubkeys;
   };
 
   # Set console font.
   console = {
     earlySetup = true;
-    font = "ter-114n";
+    font = "ter-114b";
     packages = with pkgs; [
       terminus_font
     ];
