@@ -20,6 +20,7 @@ in {
     with kdePackages; [
       kate # Text editor
     ];
+    programs.kdeconnect.enable = true;
 
     # Fonts.
     modules.desktop.fonts.enable = lib.mkDefault true;
