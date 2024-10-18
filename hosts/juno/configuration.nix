@@ -12,8 +12,7 @@
   services.printing.enable = true;
 
   # Enable desktop environments.
-  modules.desktop.gnome.enable = true;
-  modules.desktop.hyprland.enable = true;
+  modules.desktop.plasma6.enable = true;
 
   # Enable mullvad.
   modules.services.mullvad.enable = true;

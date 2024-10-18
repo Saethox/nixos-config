@@ -19,10 +19,10 @@ in {
         thunderbird # Email client
         firefox # Browser
         vlc # Media player
+        vscode-fhs # VS Code
       ])
       ++ (with pkgs.unstable; [
         jetbrains-toolbox # Jetbrains Toolbox
-        vscode-fhs # VS Code
         obsidian # Markdown knowledge base
         nextcloud-client # Nextcloud Desktop
         keymapp # Application for ZSA keyboards
