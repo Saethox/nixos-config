@@ -19,7 +19,7 @@
 
   # Use latest kernel.
   # Seems to break Plasma6.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable networking.
   networking.networkmanager.enable = true;
