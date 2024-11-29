@@ -12,7 +12,6 @@ in {
     home.packages =
       (with pkgs; [
         keepassxc # Password manager
-        signal-desktop # Signal client
         spotify # Music streaming
         gimp # Image editing
         gparted # Partition tool
@@ -20,6 +19,9 @@ in {
         firefox # Browser
         vlc # Media player
         vscode-fhs # VS Code
+      ])
+      ++ (with pkgs.beta; [
+        signal-desktop # Signal client
       ])
       ++ (with pkgs.unstable; [
         jetbrains-toolbox # Jetbrains Toolbox

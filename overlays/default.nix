@@ -28,8 +28,13 @@
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;
       config.allowUnfree = true;
-      # Fix for obsidian using Electron 25, which is EOL.
-      config.permittedInsecurePackages = ["electron-25.9.0"];
+    };
+  };
+
+  beta-packages = final: prev: {
+    beta = import inputs.nixpkgs-beta {
+      system = final.system;
+      config.allowUnfree = true;
     };
   };
 }
