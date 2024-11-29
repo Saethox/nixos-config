@@ -11,8 +11,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable X11 Plasma Desktop.
-  modules.desktop.plasma5.enable = true;
+  # Enable desktop environments.
+  modules.desktop.plasma6.enable = true;
 
   # Enable uni samba drive mounts.
   modules.mounts.uni.enable = true;

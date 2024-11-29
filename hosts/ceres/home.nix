@@ -7,9 +7,6 @@
     # Add modules here.
   ];
 
-  # Enable x11 touchpad gestures.
-  modules.desktop.x11.gestures.enable = true;
-
   # Enable desktop programs.
   modules.programs.common.enable = true;
 
