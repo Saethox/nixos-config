@@ -27,7 +27,6 @@
   hardware.bluetooth.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -56,13 +55,8 @@
   modules.hardware.laptop.enable = true;
 
   # Enable OpenGL.
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      vaapiVdpau # Hardware acceleration
-    ];
   };
 
   # Load nvidia driver for Xorg and Wayland.
@@ -111,7 +105,7 @@
     };
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   # Script for executing binary with Nvidia GPU.
