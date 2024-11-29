@@ -13,12 +13,6 @@
   # Enable python.
   modules.dev.python3.enable = true;
 
-  # Enable Hyprland.
-  modules.desktop.hyprland = {
-    enable = true;
-    nvidia = true;
-  };
-
   # Enable personal profile.
   modules.profiles.personal.enable = true;
 
