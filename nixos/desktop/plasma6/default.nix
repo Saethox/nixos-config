@@ -19,6 +19,7 @@ in {
     environment.systemPackages = with pkgs;
     with kdePackages; [
       kate # Text editor
+      filelight # Disk usage statistics
     ];
     programs.kdeconnect.enable = true;
 

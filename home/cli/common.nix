@@ -29,7 +29,7 @@ in {
         nix-output-monitor # Build tree tool
         nvd # Upgrade diff
         nh # Useful nix tools
-        rm-improved # Better `rm` (rip)
+        rip2 # Better `rm` (rip)
         ripgrep # Better `grep` (rg)
         fd # Better `find`
         bat # Better `cat`

@@ -19,6 +19,7 @@ in {
         firefox # Browser
         vlc # Media player
         vscode-fhs # VS Code
+        localsend # Send files over LAN
       ])
       ++ (with pkgs.beta; [
         signal-desktop # Signal client
