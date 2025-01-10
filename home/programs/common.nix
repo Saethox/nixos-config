@@ -18,11 +18,11 @@ in {
         thunderbird # Email client
         firefox # Browser
         vlc # Media player
-        vscode-fhs # VS Code
         localsend # Send files over LAN
       ])
       ++ (with pkgs.beta; [
         signal-desktop # Signal client
+        vscode-fhs # VS Code
       ])
       ++ (with pkgs.unstable; [
         jetbrains-toolbox # Jetbrains Toolbox
