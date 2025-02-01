@@ -31,8 +31,8 @@
     };
   };
 
-  beta-packages = final: prev: {
-    beta = import inputs.nixpkgs-beta {
+  rolling-packages = final: prev: {
+    rolling = import inputs.nixpkgs-rolling {
       system = final.system;
       config.allowUnfree = true;
     };

@@ -5,11 +5,11 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    # Nixpkgs
-    nixpkgs-beta.url = "github:nixos/nixpkgs/nixos-24.11";
-
     # Nixpkgs unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Nixpkgs rolling.
+    nixpkgs-rolling.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.11";

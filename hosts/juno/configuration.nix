@@ -1,5 +1,9 @@
 # system configuration file of 'juno' (replaces /etc/nixos/configuration.nix).
-{lib, ...}: {
+{
+  lib,
+  outputs,
+  ...
+}: {
   imports = [
     ../../nixos
     ./hardware
@@ -23,6 +27,9 @@
   # Enable virt-manager.
   modules.programs.virt.enable = true;
 
+  # Enable ssh server.
+  modules.services.ssh.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
@@ -36,6 +43,7 @@
       "input"
       "gamemode"
     ];
+    openssh.authorizedKeys.keys = builtins.attrValues outputs.constants.pubkeys;
   };
 
   # Overwrite number of jobs used for building with number of threads.

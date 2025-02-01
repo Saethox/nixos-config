@@ -21,7 +21,7 @@ update:
 
 # Update flake input
 update-input input:
-    nix flake lock --update-input {{input}}
+    nix flake update {{input}}
 
 # Show the history of the system
 history:

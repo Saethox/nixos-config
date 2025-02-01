@@ -20,7 +20,7 @@ in {
         vlc # Media player
         localsend # Send files over LAN
       ])
-      ++ (with pkgs.beta; [
+      ++ (with pkgs.rolling; [
         signal-desktop # Signal client
         vscode-fhs # VS Code
       ])
