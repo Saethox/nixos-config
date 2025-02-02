@@ -25,5 +25,7 @@ in {
 
     # Fonts.
     modules.desktop.fonts.enable = lib.mkDefault true;
+
+    security.pam.services.login.kwallet.enable = true;
   };
 }
