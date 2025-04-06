@@ -11,7 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages =
       (with pkgs; [
-        discord # All-in-one cross-platform voice and text chat
+        vesktop # Alternate client for Discord with Vencord built-in
         prismlauncher # Free, open source launcher for Minecraft
       ])
       ++ (with pkgs.unstable; [
