@@ -18,13 +18,28 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+  # Seems to break nvidia driver.
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable networking.
   networking.networkmanager.enable = true;
 
   # Enable bluetooth.
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Name = "Hello";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
@@ -105,7 +120,7 @@
     };
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   # Script for executing binary with Nvidia GPU.
