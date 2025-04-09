@@ -17,6 +17,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.enableAllFirmware = true;
+
   # Use latest kernel.
   # Seems to break nvidia driver.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
