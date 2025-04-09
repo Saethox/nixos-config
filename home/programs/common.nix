@@ -18,6 +18,7 @@ in {
         thunderbird # Email client
         firefox # Browser
         vlc # Media player
+        mpv # General-purpose media player
         localsend # Send files over LAN
       ])
       ++ (with pkgs.rolling; [
