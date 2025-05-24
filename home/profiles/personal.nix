@@ -13,11 +13,11 @@ in {
       (with pkgs; [
         vesktop # Alternate client for Discord with Vencord built-in
         prismlauncher # Free, open source launcher for Minecraft
+        ckb-next # Driver and configuration tool for Corsair keyboards and mice
       ])
       ++ (with pkgs.unstable; [
         mullvad-vpn # VPN (requires `services.mullvad-vpn`)
         bazecor # Graphical configurator for Dygma Products
-        ckb-next # Driver and configuration tool for Corsair keyboards and mice
       ]);
   };
 }
