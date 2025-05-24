@@ -31,6 +31,9 @@
   # Enable ssh server.
   modules.services.ssh.enable = true;
 
+  # Enable ckb-next.
+  hardware.ckb-next.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
