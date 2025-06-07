@@ -34,6 +34,8 @@
   # Enable ckb-next.
   hardware.ckb-next.enable = true;
 
+  modules.programs.weylus.enable = true;
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.joni = {
     isNormalUser = true;
