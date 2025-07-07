@@ -11,7 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       # Latest stable Python with useful packages.
-      (python3.withPackages (ps: with ps; ([ipython numpy pandas matplotlib seaborn] ++ lib.lists.optional config.modules.dev.latex.enable pygments)))
+      (python3.withPackages (ps: with ps; ([ipython numpy pandas matplotlib seaborn])))
       poetry # Dependency management
     ];
   };
