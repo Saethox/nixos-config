@@ -17,7 +17,7 @@ in {
       fira
       overpass
       rubik
-      symbola # https://github.com/NixOS/nixpkgs/issues/339757
+      pkgs.rolling.symbola # https://github.com/NixOS/nixpkgs/issues/339757
       fira-code
       corefonts
 
