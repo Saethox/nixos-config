@@ -12,7 +12,7 @@ in {
     home.packages = with pkgs; [
       # Latest stable Python with useful packages.
       (python3.withPackages (ps: with ps; ([ipython numpy pandas matplotlib seaborn])))
-      poetry # Dependency management
+      uv # Dependency management
     ];
   };
 }
