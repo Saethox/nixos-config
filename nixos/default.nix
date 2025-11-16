@@ -20,6 +20,7 @@
   modules.cli.common.enable = lib.mkDefault true;
   services.flatpak.enable = true;
   virtualisation.docker.enable = true;
+  programs.nix-ld.enable = true;
 
   # Configure global nixpkgs instance.
   nixpkgs = {
