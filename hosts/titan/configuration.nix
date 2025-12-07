@@ -32,7 +32,13 @@
   modules.services.ssh.enable = true;
 
   # Enable ckb-next.
-  hardware.ckb-next.enable = true;
+  hardware.ckb-next = {
+    enable = true;
+    # https://github.com/NixOS/nixpkgs/issues/444209
+    package = pkgs.ckb-next.overrideAttrs (old: {
+      cmakeFlags = (old.cmakeFlags or []) ++ ["-DUSE_DBUS_MENU=0"];
+    });
+  };
 
   modules.programs.weylus.enable = true;
 
