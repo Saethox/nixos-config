@@ -48,14 +48,14 @@
   # be accessible through 'pkgs.unstable'.
   unstable-packages = final: prev: {
     unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
+      stdenv.hostPlatform.system = final.stdenv.hostPlatform.system;
       config.allowUnfree = true;
     };
   };
 
   rolling-packages = final: prev: {
     rolling = import inputs.nixpkgs-rolling {
-      system = final.system;
+      stdenv.hostPlatform.system = final.stdenv.hostPlatform.system;
       config.allowUnfree = true;
     };
   };

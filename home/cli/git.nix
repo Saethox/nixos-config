@@ -21,7 +21,7 @@ in {
         enable = true;
         # Enable Git Large File Storage.
         lfs.enable = true;
-        extraConfig = {
+        settings = {
           # Rebase by default on `git pull`.
           pull.rebase = true;
           github.user = "Saethox";
@@ -34,12 +34,12 @@ in {
       }
       // {
         "private" = {
-          userName = "Saethox";
-          userEmail = "joni.htruw@gmail.com";
+          settings.user.name = "Saethox";
+          settings.user.email = "joni.htruw@gmail.com";
         };
         "work" = {
-          userName = "Jonathan Wurth";
-          userEmail = "jonathan.wurth@uni-a.de";
+          settings.user.name = "Jonathan Wurth";
+          settings.user.email = "jonathan.wurth@uni-a.de";
         };
       }
       ."${cfg.user}";

@@ -33,8 +33,8 @@
   # Minecraft.
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 80 443 25565 ];
-    allowedUDPPorts = [ 80 443 25565 ];
+    allowedTCPPorts = [80 443 25565];
+    allowedUDPPorts = [80 443 25565];
   };
 
   # Configure system-wide user settings (groups, etc), add more users as needed.
