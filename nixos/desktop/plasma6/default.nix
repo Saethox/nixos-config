@@ -25,5 +25,8 @@ in {
 
     # Fonts.
     modules.desktop.fonts.enable = lib.mkDefault true;
+
+    # Network Manager Plugins
+    networking.networkmanager.plugins = with pkgs; [networkmanager-openvpn];
   };
 }
