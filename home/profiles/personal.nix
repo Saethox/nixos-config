@@ -13,6 +13,7 @@ in {
       (with pkgs; [
         vesktop # Alternate client for Discord with Vencord built-in
         prismlauncher # Free, open source launcher for Minecraft
+        qbittorrent # Featureful free software BitTorrent client
       ])
       ++ (with pkgs.unstable; [
         mullvad-vpn # VPN (requires `services.mullvad-vpn`)

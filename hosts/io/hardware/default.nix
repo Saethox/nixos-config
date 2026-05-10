@@ -7,7 +7,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    # nixos-hardware settings for Titan Desktop.
+    # nixos-hardware settings for Io Desktop.
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
