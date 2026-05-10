@@ -48,5 +48,5 @@
 
   # AMD GPU options
   nixpkgs.config.rocmSupport = true;
-  environment.systemPackages = with pkgs.unstable; [amd-smi];
+  environment.systemPackages = with pkgs.unstable; [rocmPackages.amd-smi];
 }
