@@ -13,7 +13,7 @@ $ just deploy
 
 - Ceres (Lenovo Thinkpad X1 Carbon Gen 11)
 - Juno (Lenovo ThinkBook 16p Gen 2 ACH)
-- Titan (AMD Ryzen 5600X + Nvidia GeForce 1660 Ti Desktop PC)
+- Io (AMD Ryzen 9800X3D + AMD Radeon RX 9070 XT)
 
 ## Structure
 

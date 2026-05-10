@@ -1,4 +1,4 @@
-# home-manager configuration file of 'titan' (replaces ~/.config/nixpkgs/home.nix).
+# home-manager configuration file of 'io' (replaces ~/.config/nixpkgs/home.nix).
 {
   imports = [
     ../../home
