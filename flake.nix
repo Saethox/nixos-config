@@ -93,6 +93,24 @@
         hostname = "titan";
         username = "joni";
       };
+      # Live iso
+      live = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./iso
+        ];
+      };
     };
+
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      default = pkgs.mkShell {
+        packages = with pkgs; [
+          just
+          caligula
+        ];
+      };
+    });
   };
 }

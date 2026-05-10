@@ -7,13 +7,19 @@
 default:
     @just --list --unsorted --justfile {{justfile()}}
 
+
+# Build the live ISO for provisioning
+build-iso:
+    nix build --impure .#nixosConfigurations.live.config.system.build.isoImage
+    @echo "ISO at $(find result/iso -name '*.iso')"
+
 # Deploy the system config
 deploy:
     nh os switch . --ask -- --impure
 
-# Build the system config with debug flags
-debug:
-    nixos-rebuild build --flake . --show-trace --verbose
+# Build a node config with debug flags
+build:
+    nh os build . -- --show-trace --verbose
 
 # Update flake
 update:
@@ -35,10 +41,6 @@ clean:
 gc:
     sudo nix store gc --debug
 
-# Enter the Nix REPL and load `flake.nix`
-repl:
-    nix repl .
-
 # Run the Nix formatter
 fmt:
-    nix fmt
+    alejandra *
