@@ -89,8 +89,8 @@
         username = "joni";
       };
       # Private Desktop
-      titan = hostConfiguration {
-        hostname = "titan";
+      io = hostConfiguration {
+        hostname = "io";
         username = "joni";
       };
       # Live iso
