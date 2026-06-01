@@ -1,5 +1,5 @@
 # system configuration file of 'ceres' (replaces /etc/nixos/configuration.nix).
-{lib, ...}: {
+{lib, pkgs, ...}: {
   imports = [
     ../../nixos
     ./hardware
@@ -20,6 +20,14 @@
   # Enable mullvad.
   modules.services.mullvad.enable = true;
 
+  # Allow RAPL access
+  users.groups.rapl = {};
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="powercap", KERNEL=="intel-rapl:*", \
+      RUN+="${pkgs.coreutils}/bin/chgrp rapl /sys/%p/energy_uj", \
+      RUN+="${pkgs.coreutils}/bin/chmod 0440 /sys/%p/energy_uj"
+  '';
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.wurthjon = {
     isNormalUser = true;
@@ -31,6 +39,7 @@
       "libvirtd"
       "docker"
       "input"
+      "rapl"
     ];
   };
 
