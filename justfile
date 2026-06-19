@@ -19,7 +19,7 @@ deploy:
 
 # Build a node config with debug flags
 build:
-    nh os build . -- --show-trace --verbose
+    nh os build . -- --show-trace --verbose --impure
 
 # Update flake
 update:

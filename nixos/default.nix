@@ -21,6 +21,7 @@
   services.flatpak.enable = true;
   virtualisation.docker.enable = true;
   programs.nix-ld.enable = true;
+  services.fwupd.enable = true;
 
   # Configure global nixpkgs instance.
   nixpkgs = {
