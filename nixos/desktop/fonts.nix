@@ -20,6 +20,7 @@ in {
       pkgs.rolling.symbola # https://github.com/NixOS/nixpkgs/issues/339757
       fira-code
       corefonts
+      barlow
 
       # Icon fonts
       material-design-icons
