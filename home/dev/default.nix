@@ -10,5 +10,6 @@
   ]) ++ (with pkgs.rolling; [
     claude-code
     codex
+    opencode
   ]);
 }
