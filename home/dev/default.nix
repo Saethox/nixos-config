@@ -7,6 +7,7 @@
 
   home.packages = with pkgs.rolling; [
     devenv
+    gh
     claude-code
     codex
     opencode
