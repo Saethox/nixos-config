@@ -21,6 +21,7 @@ in {
       fira-code
       corefonts
       barlow
+      ibm-plex
 
       # Icon fonts
       material-design-icons
