@@ -5,11 +5,10 @@
     ./latex.nix
   ];
 
-  home.packages = (with pkgs.unstable; [
+  home.packages = with pkgs.rolling; [
     devenv
-  ]) ++ (with pkgs.rolling; [
     claude-code
     codex
     opencode
-  ]);
+  ];
 }
