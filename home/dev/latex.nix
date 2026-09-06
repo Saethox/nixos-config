@@ -10,7 +10,16 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs.unstable; [
-      (texlive.combine {inherit (texlive) scheme-full libertine inconsolata biblatex newtx;})
+      (texliveSmall.withPackages (
+        ps:
+          with ps; [
+            scheme-full
+            libertine
+            inconsolata
+            biblatex
+            newtx
+          ]
+      ))
     ];
   };
 }

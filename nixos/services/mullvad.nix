@@ -11,7 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.mullvad-vpn = {
       enable = true;
-      package = pkgs.unstable.mullvad-vpn;
+      package = pkgs.mullvad-vpn;
     };
 
     # https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/13

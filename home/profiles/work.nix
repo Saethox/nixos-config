@@ -21,8 +21,8 @@ in {
         libreoffice-qt # Documents
       ])
       ++ (with pkgs.unstable; [
-        jabref # Literature management
-        zettlr # Alternative Obsidian
+        # jabref # Literature management
+        # zettlr # Alternative Obsidian
         eduvpn-client # eduVPN
         zotero # Literature management
       ]);

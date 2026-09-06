@@ -14,9 +14,9 @@ in {
         vesktop # Alternate client for Discord with Vencord built-in
         prismlauncher # Free, open source launcher for Minecraft
         qbittorrent # Featureful free software BitTorrent client
+        mullvad-vpn # VPN (requires `services.mullvad-vpn`)
       ])
       ++ (with pkgs.unstable; [
-        mullvad-vpn # VPN (requires `services.mullvad-vpn`)
         bazecor # Graphical configurator for Dygma Products
       ]);
   };
