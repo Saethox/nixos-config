@@ -8,6 +8,7 @@
   imports = [
     ../../nixos
     ./hardware
+    ./runner.nix
   ];
 
   # Set the hostname.
