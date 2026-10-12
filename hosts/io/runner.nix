@@ -6,7 +6,7 @@
 }: let
   work = "/var/lib/runner";
   binPath =
-    lib.makeBinPath [pkgs.bash pkgs.rsync pkgs.gcc] + ":/run/current-system/sw/bin";
+    lib.makeBinPath (with pkgs; [bash rsync gcc rustup]) + ":/run/current-system/sw/bin";
   sandbox = pkgs.writeShellScript "runner-sandbox" ''
     exec ${pkgs.bubblewrap}/bin/bwrap \
       --unshare-user --unshare-ipc --unshare-uts --unshare-cgroup \
