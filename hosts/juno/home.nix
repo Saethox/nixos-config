@@ -10,8 +10,9 @@
   # Enable desktop programs.
   modules.programs.common.enable = true;
 
-  # Enable python.
+  # Enable python and rust.
   modules.dev.python3.enable = true;
+  modules.dev.rust.enable = true;
 
   # Enable personal profile.
   modules.profiles.personal.enable = true;
