@@ -15,6 +15,9 @@
       --ro-bind /etc/resolv.conf /etc/resolv.conf \
       --ro-bind /proc /proc --dev /dev --tmpfs /tmp \
       --bind ${work} ${work} --chdir ${work} \
+      --symlink ${pkgs.coreutils}/bin/env /usr/bin/env \
+      --symlink ${pkgs.bash}/bin/sh /bin/sh \
+      --symlink ${config.environment.variables.NIX_LD} /lib64/ld-linux-x86-64.so.2 \
       --symlink ${config.environment.variables.NIX_LD} /lib64/ld-linux-x86-64.so.2 \
       --setenv NIX_LD ${config.environment.variables.NIX_LD} \
       --setenv NIX_LD_LIBRARY_PATH ${config.environment.variables.NIX_LD_LIBRARY_PATH} \
