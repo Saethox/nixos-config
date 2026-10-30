@@ -28,6 +28,13 @@
       RUN+="${pkgs.coreutils}/bin/chmod 0440 /sys/%p/energy_uj"
   '';
 
+  # Configure avahi for runners
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Configure system-wide user settings (groups, etc), add more users as needed.
   users.users.wurthjon = {
     isNormalUser = true;

@@ -8,7 +8,6 @@
   imports = [
     ../../nixos
     ./hardware
-    ./runner.nix
   ];
 
   # Set the hostname.
@@ -31,6 +30,7 @@
 
   # Enable ssh server.
   modules.services.ssh.enable = true;
+  modules.services.runner.enable = true;
 
   # Enable ckb-next.
   hardware.ckb-next = {

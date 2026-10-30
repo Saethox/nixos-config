@@ -29,6 +29,7 @@
 
   # Enable ssh server.
   modules.services.ssh.enable = true;
+  modules.services.runner.enable = true;
 
   # Minecraft.
   networking.firewall = {
