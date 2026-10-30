@@ -12,7 +12,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
       claude-code
-      opencode
+      opencode2
       codex
     ];
   };
