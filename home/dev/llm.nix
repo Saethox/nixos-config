@@ -14,6 +14,6 @@ in {
       claude-code
       opencode2
       codex
-    ];
+    ] ++ [pkgs.nodejs];
   };
 }
