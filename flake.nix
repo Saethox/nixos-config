@@ -20,6 +20,9 @@
 
     # nix-flatpaks (declarative flatpaks)
     flatpaks.url = "github:gmodena/nix-flatpak/main";
+
+    # Nix packages for AI coding agents and development tools, explicitly no nixpkgs override
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = {
