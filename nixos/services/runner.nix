@@ -8,14 +8,15 @@
   cfg = config.modules.services.runner;
 
   work = "/var/lib/runner";
-  binPath = lib.makeBinPath ((with pkgs; [bash rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv])) + ":/run/current-system/sw/bin";
+  binPath = lib.makeBinPath ((with pkgs; [rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv])) + ":/run/current-system/sw/bin";
   sandbox = pkgs.writeShellScript "runner-sandbox" ''
     exec ${pkgs.bubblewrap}/bin/bwrap \
       --unshare-user --unshare-ipc --unshare-uts --unshare-cgroup \
       --ro-bind /nix/store /nix/store \
       --ro-bind /run/current-system/sw /run/current-system/sw \
       --ro-bind /etc/resolv.conf /etc/resolv.conf \
-      --ro-bind /proc /proc --dev /dev --tmpfs /tmp \
+      --proc /proc \
+      --dev /dev --tmpfs /tmp \
       --bind ${work} ${work} --chdir ${work} \
       --symlink ${pkgs.coreutils}/bin/env /usr/bin/env \
       --symlink ${pkgs.bash}/bin/sh /bin/sh \
