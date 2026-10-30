@@ -42,7 +42,7 @@
   users.users.joni = {
     isNormalUser = true;
     description = "Jonathan Wurth";
-    uid = 1000;
+    uid = 1001;  # weird alice bug
     extraGroups = [
       "wheel"
       "networkmanager"
