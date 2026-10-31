@@ -8,7 +8,7 @@
   cfg = config.modules.services.runner;
   work = "/var/lib/runner";
   binPath =
-    lib.makeBinPath ((with pkgs; [rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv]))
+    lib.makeBinPath ((with pkgs; [git rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv]))
     + ":/run/current-system/sw/bin";
   sandbox = pkgs.writeShellScript "runner-sandbox" ''
     exec ${pkgs.bubblewrap}/bin/bwrap \
