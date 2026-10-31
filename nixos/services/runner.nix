@@ -6,13 +6,15 @@
   ...
 }: let
   cfg = config.modules.services.runner;
-
   work = "/var/lib/runner";
-  binPath = lib.makeBinPath ((with pkgs; [rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv])) + ":/run/current-system/sw/bin";
+  binPath =
+    lib.makeBinPath ((with pkgs; [rsync gcc rustup uv]) ++ (with pkgs.rolling; [devenv]))
+    + ":/run/current-system/sw/bin";
   sandbox = pkgs.writeShellScript "runner-sandbox" ''
     exec ${pkgs.bubblewrap}/bin/bwrap \
       --unshare-user --unshare-ipc --unshare-uts --unshare-cgroup \
       --ro-bind /nix/store /nix/store \
+      --bind /nix/var/nix/daemon-socket /nix/var/nix/daemon-socket \
       --ro-bind /run/current-system/sw /run/current-system/sw \
       --ro-bind /etc/resolv.conf /etc/resolv.conf \
       --proc /proc \
@@ -23,6 +25,8 @@
       --symlink ${config.environment.variables.NIX_LD} /lib64/ld-linux-x86-64.so.2 \
       --setenv NIX_LD ${config.environment.variables.NIX_LD} \
       --setenv NIX_LD_LIBRARY_PATH ${config.environment.variables.NIX_LD_LIBRARY_PATH} \
+      --setenv NIX_REMOTE daemon \
+      --setenv NIX_CONFIG "experimental-features = nix-command flakes" \
       --setenv HOME ${work} --setenv CARGO_HOME ${work}/.cargo --setenv RUSTUP_HOME ${work}/.rustup \
       --setenv UV_CACHE_DIR ${work}/.cache/uv \
       --setenv UV_PYTHON_INSTALL_DIR ${work}/.python \
